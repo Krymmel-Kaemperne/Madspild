@@ -177,11 +177,102 @@ footer {
     object-fit: cover;
 }
 
+
+.fakta-section {
+    display: flex;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1000px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.fakta-section2 {
+    display: flex;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1000px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.text-content {
+    flex: 2; /* Text fylder 66%*/
+}
+
+.stat-box {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-box h3 {
+    color: #333;
+}
+
+.stat-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.stat-box ul li {
+    padding: 5px 0;
+    font-size: 16px;
+}
+
+#content {
+    border-top: 1px solid black;
+    padding: 0 15px;
+}
+
+.photo1 img {
+    width: 100%;
+    height: auto;
+    max-height: 329px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.photo1 {
+    flex: 1;
+    align-self: center;
+    margin: 0 0 0 20px;
+}
+
+.photo2 {
+    flex: 1;
+    align-self: flex-start; /* Juster til toppen */
+    margin-right: 20px; /* Afstand til tekst */
+    margin-left: 0;
+}
+
+.photo2 img {
+    width: 100%;
+    height: auto;
+    max-height: 329px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.fakta-section span {
+    width: 100%;
+    margin: 0 0 20px 0;
+    max-height: 50px;
+
+}
+
+
+
 .about-text h2 {
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 10px;
 }
+
 
 .about-text h3 {
     font-size: 22px;
