@@ -9,14 +9,16 @@
 
 body {
     font-family: "Almarai", sans-serif;
+    background-color: antiquewhite;
+
 }
 
 .container {
+
 }
 
 header {
     margin: 15px;
-    background-color: white;
     height: 50px;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -114,33 +116,50 @@ header {
 
 }
 
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-links li {
+    margin-bottom: 8px;
+}
+.footer-links a {
+    text-decoration: none;
+    color: #007bff; /* Example link color */
+}
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
 footer {
-    background-color: white;
-    height: 300px;
-    margin: 15px 15px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 20px; /* Added more padding */
+    background-color: #f8f9fa; /* Light grey background */
+    border-top: 1px solid #dee2e6;
+    color: #6c757d; /* Grey text color */
+    font-size: 0.9em;
 }
-
 .footer-column {
-    margin-top: 50px;
+    width: 30%;
+    padding: 0 15px; /* Add some padding within columns */
 }
-
-
-.contact-column {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 15px 15px;
-    justify-content: left; /* Aligns everything to the right */
-    text-align: left;
-    align-items: center;
+.footer-column h3 {
+    color: #343a40; /* Darker heading color */
+    margin-bottom: 20px; /* More space below heading */
+    font-weight: 500;
 }
-
 .contact-column p {
-    font-size: 13px;
-    margin: 0; /* Removes default margins */
-    white-space: nowrap; /* Prevents text from breaking */
+    margin: 4px 0;
+}
+.contact-column strong {
+    color: #495057; /* Slightly darker label */
+}
+
+/* Aktiv viser hvilken underside man er inde på. */
+.aktiv{
+    background-color: lightgreen;
 }
 
 
