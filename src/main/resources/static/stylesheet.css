@@ -162,5 +162,46 @@ footer {
     background-color: lightgreen;
 }
 
+/* Om os Sektion */
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 kolonner: 1 for tekst og 1 for billede */
+    gap: 30px; /* Afstand mellem tekst og billede */
+    margin: 50px 15px;
+    padding: 20px;
+}
 
+.about-text {
+    width: 100%; /* Fylder sin grid-plads */
+    padding-right: 20px;
+    object-fit: cover;
+}
 
+.about-text h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.about-text h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+.about-image {
+    width: 100%;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
