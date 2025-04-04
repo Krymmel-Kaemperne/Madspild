@@ -193,6 +193,14 @@ footer {
     flex-wrap: wrap;
 }
 
+.tips-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1000px;
+}
+
 .fakta-section2 {
     display: flex;
     padding: 20px;
@@ -257,6 +265,19 @@ footer {
     margin: 0 0 20px 0;
     max-height: 50px;
 
+}
+
+.photo3 {
+    flex: 1;
+    align-self: center;
+}
+
+.photo3 img {
+    width: 100%;
+    height: auto;
+    max-height: 429px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .about-text h2 {
