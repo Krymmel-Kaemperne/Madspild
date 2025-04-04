@@ -373,6 +373,97 @@ footer {
     border-radius: 10px;
     object-fit: cover;
 }
+
+/* --- Sæsonkalender Layout (4 Kolonner) --- */
+
+.season-calendar {
+    display: grid;
+    /* Definerer eksplicit 4 lige brede kolonner */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Juster evt. afstanden mellem kolonnerne */
+    margin-top: 30px;
+}
+
+/* Bevar styling for .season-block, h3, h4, ul, li og sæsonfarver */
+.season-block {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px; /* Lidt mindre padding for smallere kolonner */
+    background-color: #fdfdfd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sikrer at blokkene har samme højde hvis indholdet varierer */
+    display: flex;
+    flex-direction: column;
+}
+
+.season-block h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid;
+    text-align: center; /* Centrer evt. sæsonnavn */
+}
+
+.season-block h4 {
+    margin-top: 15px; /* Justeret margin */
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.season-block ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding-left: 0;
+    font-size: 0.9em; /* Lidt mindre skrift i smallere kolonner */
+    /* Giver plads til at vokse hvis en blok er højere */
+    flex-grow: 1;
+}
+
+.season-block ul li {
+    margin-bottom: 5px;
+}
+
+.season-block ul li strong {
+    color: #111;
+}
+
+/* Sæson-specifikke farver (som før) */
+.season-block.spring { border-color: #87c7a1; }
+.season-block.spring h3 { border-bottom-color: #87c7a1; color: #3a8c5a; }
+.season-block.summer { border-color: #ffd966; }
+.season-block.summer h3 { border-bottom-color: #ffd966; color: #b38f00; }
+.season-block.autumn { border-color: #e09f7d; }
+.season-block.autumn h3 { border-bottom-color: #e09f7d; color: #a05d3a; }
+.season-block.winter { border-color: #a4c2f4; }
+.season-block.winter h3 { border-bottom-color: #a4c2f4; color: #4a78b0; }
+
+
+/* --- Responsivitet for Sæsonkalender --- */
+
+/* Mellemstore skærme (f.eks. tablets) - 2 kolonner */
+@media (max-width: 992px) {
+    .season-calendar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px; /* Lidt mere plads ved 2 kolonner */
+    }
+    .season-block {
+        padding: 20px; /* Mere padding igen */
+    }
+    .season-block ul {
+        font-size: 0.95em; /* Lidt større skrift igen */
+    }
+}
+
+/* Små skærme (f.eks. mobiler) - 1 kolonne */
+@media (max-width: 576px) {
+    .season-calendar {
+        grid-template-columns: 1fr; /* Kun én kolonne */
+        gap: 20px;
+    }
+}
+
+/* --- Slut Sæsonkalender Layout --- */
+=======
 /*
 Køleskaberen
  */
@@ -436,6 +527,3 @@ Køleskaberen
     font-size: 1.2em;
     font-weight: bold;
 }
-
-
-
