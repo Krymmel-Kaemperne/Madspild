@@ -247,7 +247,7 @@ footer {
 
 .photo2 {
     flex: 1;
-    align-self: flex-start; /* Juster til toppen */
+    align-self: center; /* Juster til toppen */
     margin-right: 20px; /* Afstand til tekst */
     margin-left: 0;
 }
@@ -279,8 +279,6 @@ footer {
     object-fit: cover;
     border-radius: 10px;
 }
-
-
 
 .about-text h2 {
     font-size: 32px;

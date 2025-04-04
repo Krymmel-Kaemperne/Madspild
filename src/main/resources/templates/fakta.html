@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
-  <title>Madspild</title>
-  <link rel="stylesheet" href="/stylesheet.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <title>Fakta</title>
+    <link rel="stylesheet" href="/stylesheet.css">
+  </head>
 <body>
 
 <div class="container">
@@ -15,13 +15,13 @@
     <div class="logo">
       <a th:href="@{/}">Madspild.</a>
     </div>
-    <div class="nav">
-      <a th:href="@{/madbanken}">Madbanken</a>
-      <a th:href="@{/koleskaberen}">Køleskaberen</a>
-      <a class="aktiv" th:href="@{/fakta}">Fakta</a>
-      <a th:href="@{/tipstricks}">Tips&Tricks</a>
-      <a th:href="@{/omos}">Om os</a>
-    </div>
+      <div class="nav">
+        <a th:href="@{/madbanken}">Madbanken</a>
+        <a th:href="@{/koleskaberen}">Køleskaberen</a>
+        <a class="aktiv" th:href="@{/fakta}">Fakta</a>
+        <a th:href="@{/tipstricks}">Tips&Tricks</a>
+        <a th:href="@{/omos}">Om os</a>
+      </div>
     <div class="log-in">
       <a href="#">Log ind</a>
     </div>
@@ -31,13 +31,13 @@
   <div id="content" class="flex-container">
     <div class="fakta-section">
         <span>
-      <h2>Fakta og Statistik om Madspild i Danmark</h2>
+          <h2>Fakta og Statistik om Madspild i Danmark</h2>
         </span>
 
       <div class="text-content">
 
         <div class="stat-box">
-          <h3>Hvor stor er problemet</h3>
+          <h3>Hvor stort er problemet</h3>
           <p> Madspild er en af de største udfordringer inden for bæredygtighed og fødevareproduktion.
             Hvert år bliver enorme mængder spiselige fødevarer kasseret,
             hvilket har store økonomiske, sociale og miljømæssige konsekvenser.</p>
@@ -50,14 +50,14 @@
         </div>
       </div>
       <div class="photo1">
-        <img src="/img/Trashcan.webp" alt="Madspild i Danmark">
+        <img src="/img/Trashcan.webp" alt="Skraldespand fyldt med mad">
       </div>
     </div>
 
     <div class="fakta-section2">
       <div class="photo2">
-        <img src="/img/RemoveItems.webp" alt="Madspild i Danmark">
-        <img src="/img/BadFood.webp" alt="Madspild i Danmark">
+        <img src="/img/RemoveItems.webp" alt="Mand fjerner varer fra hylden">
+        <img src="/img/BadFood.webp" alt="Mad er blevet dårligt i køleskabet">
       </div>
       <div class="text-content">
 
@@ -65,68 +65,122 @@
           <h3>Hvordan fordeler madspildet sig?</h3>
             <p> Madspild findes overalt i fødevarekæden – fra produktion til forbrug. </p>
           <br>
-          <h3>Detailhandelens madspild</h3>
-          <ul>
-            <li>🔹 Specialforretninger (slagtere, fiskeforretninger, grønthandlere) står for <strong>12.000</strong> tons madspild årligt.</li>
-            <li>🔹 Supermarkeder, varehuse, kiosker og købmænd står for hele <strong>151.000</strong> tons madspild.</li>
-            <li>🔹 Meget af dette mad kunne være spist, men bliver ofte kasseret pga. udløbsdatoer, skader på emballage eller overskudsproduktion.</li>
-          </ul>
+            <h3>Detailhandelens madspild</h3>
+              <ul>
+                <li>🔹 Specialforretninger (slagtere, fiskeforretninger, grønthandlere) står for <strong>12.000</strong> tons madspild årligt.</li>
+                <li>🔹 Supermarkeder, varehuse, kiosker og købmænd står for hele <strong>151.000</strong> tons madspild.</li>
+                <li>🔹 Meget af dette mad kunne være spist, men bliver ofte kasseret pga. udløbsdatoer, skader på emballage eller overskudsproduktion.</li>
+              </ul>
           <br>
-          <h3>Madspild i husholdninger</h3>
-          <ul>
-            <li>🔹 Husholdningerne står for den største andel af madspildet i Danmark.</li>
-            <li>🔹 Ofte er det frugt, grøntsager, brød og mejeriprodukter, der ender i skraldespanden.</li>
-            <li>🔹 Mange danskere smider mad ud, fordi de tolker
-              "Bedst før"-datoen forkert - en stor del af denne mad er stadig spiselig.</li>
-          </ul>
+            <h3>Madspild i husholdninger</h3>
+            <ul>
+              <li>🔹 Husholdningerne står for den største andel af madspildet i Danmark.</li>
+              <li>🔹 Ofte er det frugt, grøntsager, brød og mejeriprodukter, der ender i skraldespanden.</li>
+              <li>🔹 Mange danskere smider mad ud, fordi de tolker
+                "Bedst før"-datoen forkert - en stor del af denne mad er stadig spiselig.</li>
+            </ul>
         </div>
       </div>
     </div>
   </div>
 
-
-  <footer>
-    <div class="footer-column">
-      <h3>Kontakt os: </h3>
-      <br> <br>
-      <div class="contact-column">
-        <p><Strong>Telefon:</Strong></p>
-        <p>+45 9988 7766</p>
-        <p><Strong>Mail:</Strong></p>
-        <p>madspild@gmail.com </p>
-        <p><Strong>Address:</Strong></p>
-        <p>Stuensensgade 15, 3tv, 2100 København Ø </p>
+  <div class="fakta-section">
+    <div class="text-content">
+      <div class="stat-box">
+        <h3>De store konsekvenser af madspild</h3>
+        <p> Madspild påvirker ikke kun vores pengepung – det har også store konsekvenser for miljøet og samfundet: </p>
+        <br>
+        <h3>Miljømæssige konsekvenser</h3>
+        <ul>
+          <li>🔹 Når mad smides ud, spildes også de ressourcer, der er brugt på at producere den – vand, jord, energi og transport.</li>
+          <li>🔹 Madspild er ansvarlig for 8-10 % af de globale drivhusgasudledninger.</li>
+          <li>🔹 Hvis madspild var et land, ville det være den tredjestørste udleder af CO₂ i verden – kun overgået af Kina og USA.</li>
+        </ul>
+        <br>
+        <h3>Økonomiske konsekvenser</h3>
+        <ul>
+          <li>🔹 Danskerne smider mad ud for milliarder af kroner hvert år.</li>
+          <li>🔹 Virksomheder mister penge på mad, der aldrig bliver solgt eller spist.</li>
+          <li>🔹 Supermarkeder har begyndt at sælge varer med kort holdbarhed billigere for at reducere deres madspild.</li>
+        </ul>
+        <br>
+        <h3>Sociale konsekvenser</h3>
+        <ul>
+          <li>🔹 Mens tonsvis af mad går til spilde, lever mange mennesker i
+            fattigdom og har ikke råd til ordentlig ernæring.</li>
+        </ul>
       </div>
-
     </div>
-    <div class="footer-column">
-      <h3>Kontakt os: </h3>
-      <br> <br>
-      <div class="contact-column">
-        <p><Strong>Telefon:</Strong></p>
-        <p>+45 9988 7766</p>
-        <p><Strong>Mail:</Strong></p>
-        <p>madspild@gmail.com </p>
-        <p><Strong>Address:</Strong></p>
-        <p>Stuensensgade 15, 3tv, 2100 København Ø </p>
+    <div class="photo1">
+      <img src="/img/Globe.webp" alt="Kloden flyder over med skrald">
+      <img src="/img/BadFoodSmoke.webp" alt="Overskudsmad bliver brændt og udleder drivhusgasser">
+    </div>
+  </div>
+
+  <div class="fakta-section2">
+    <div class="photo2">
+      <img src="/img/GoodFood.webp" alt="Mad er ikke blevet for dårligt i køleskabet">
+    </div>
+    <div class="text-content">
+      <div class="stat-box">
+        <h3>Hvordan kan vi bekæmpe madspild?</h3>
+        <p> Madspild kan bekæmpes på mange måder – både af enkeltpersoner, virksomheder og samfundet som helhed.</p>
+        <br>
+        <ul>
+          <li>🔹 <strong>Planlæg dine indkøb</strong> – Lav en indkøbsliste og køb kun det, du har brug for.</li>
+          <li>🔹 <strong>Forstå datomærkning</strong> – "Bedst før" betyder ikke, at maden er dårlig efter datoen. Brug dine sanser!</li>
+          <li>🔹 <strong>Opbevar maden korrekt</strong> – Mange madvarer holder sig længere, hvis de opbevares rigtigt.</li>
+          <li>🔹 <strong>Brug rester kreativt</strong> – Overskydende mad kan ofte bruges til nye retter.</li>
+          <li>🔹 <strong>Køb varer med kort holdbarhed</strong> – Hjælp supermarkeder med at reducere spild ved at købe nedsatte varer.</li>
+        </ul>
       </div>
-
     </div>
-    <div class="footer-column">
-      <h3>Kontakt os: </h3>
-      <br> <br>
-      <div class="contact-column">
-        <p><Strong>Telefon:</Strong></p>
-        <p>+45 9988 7766</p>
-        <p><Strong>Mail:</Strong></p>
-        <p>madspild@gmail.com </p>
-        <p><Strong>Address:</Strong></p>
-        <p>Stuensensgade 15, 3tv, 2100 København Ø </p>
-      </div>
-
-    </div>
-  </footer>
-
+  </div>
 </div>
+
+
+<footer>
+  <div class="footer-column">
+    <!-- Column 1: About the Project -->
+    <h3>Om Projekt Madspild</h3>
+    <p>
+      En prototype webapplikation designet til at informere og hjælpe
+      med at reducere madspild i Danmark.
+    </p>
+    <p>
+      <em>2. Semester GUI Projekt - 2025</em>
+    </p>
+    <p style="margin-top: 20px;">
+      &copy; 2025 Projekt Madspild. Alle rettigheder forbeholdes (Prototype).
+    </p>
+  </div>
+
+  <div class="footer-column">
+    <!-- Column 2: Useful Links (Using Thymeleaf th:href) -->
+    <h3>Nyttige Links</h3>
+    <ul class="footer-links">
+      <li><a th:href="@{/}">Forside</a></li> <!-- Link to home controller mapping -->
+      <li><a th:href="@{/fakta}">Fakta om Madspild</a></li> <!-- Link to /fakta controller mapping -->
+      <li><a th:href="@{/tipstricks}">Tips & Tricks</a></li> <!-- Example: Link to /tips controller mapping -->
+      <li><a th:href="@{/omos}">Om Os</a></li> <!-- Example: Link to /om-os controller mapping -->
+      <li><a th:href="@{/madbanken}">Madbanken</a></li><!-- Example: Link to /kontakt controller mapping -->
+      <li><a th:href="@{/koleskaberen}">Køleskaberen</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-column">
+    <!-- Column 3: Contact Information -->
+    <h3>Kontakt os</h3>
+    <div class="contact-column">
+      <p><strong>Telefon:</strong></p>
+      <p>+45 9988 7766</p>
+      <p><strong>Mail:</strong></p>
+      <p>info@projektmadspild.dk</p> <!-- Placeholder -->
+      <p><strong>Adresse:</strong></p>
+      <p>Innovations Allé 1<br>2100 København Ø</p> <!-- Placeholder -->
+    </div>
+    <!-- Optional: Add social media icons here if relevant -->
+  </div>
+</footer>
 </body>
 </html>
