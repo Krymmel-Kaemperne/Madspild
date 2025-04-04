@@ -40,73 +40,7 @@
 
       <a th:href="@{/}" class="button">Tilbage til forsiden</a>
     </div>
-
-
-    <footer>
-      <div class="footer-column">
-        <!-- Column 1: About the Project -->
-        <h3>Om Projekt Madspild</h3>
-        <p>
-          En prototype webapplikation designet til at informere og hjælpe
-          med at reducere madspild i Danmark.
-        </p>
-        <p>
-          <em>2. Semester GUI Projekt - 2025</em>
-        </p>
-        <p style="margin-top: 20px;">
-          &copy; 2025 Projekt Madspild. Alle rettigheder forbeholdes (Prototype).
-        </p>
-      </div>
-
-      <div class="footer-column">
-        <!-- Column 2: Newsletter Signup -->
-        <h3>Tilmeld Nyhedsbrev</h3>
-        <p>Få de seneste nyheder og tips direkte i din indbakke.</p>
-        <form action="/tilmeld-nyhedsbrev" method="post"> <!-- Erstat action med din server-endpoint -->
-          <div class="form-group">
-            <label for="email" style="display: block; margin-bottom: 5px;">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Indtast din email" required style="width: 95%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
-          </div>
-          <div class="form-group" style="margin-bottom: 10px;">
-            <input type="checkbox" id="accept" name="accept" required style="margin-right: 5px;">
-            <label for="accept" style="font-size: 0.9em;">
-              Jeg accepterer at modtage emails og marketingmateriale.
-            </label>
-          </div>
-          <button type="submit" style="padding: 10px 15px; background-color: #5cb85c; color: white; border: none; border-radius: 4px; cursor: pointer;">
-            Tilmeld
-          </button>
-        </form>
-      </div>
-
-      <div class="footer-column">
-        <!-- Column 2: Useful Links (Using Thymeleaf th:href) -->
-        <h3>Nyttige Links</h3>
-        <ul class="footer-links">
-          <li><a th:href="@{/}">Forside</a></li> <!-- Link to home controller mapping -->
-          <li><a th:href="@{/fakta}">Fakta om Madspild</a></li> <!-- Link to /fakta controller mapping -->
-          <li><a th:href="@{/tipstricks}">Tips & Tricks</a></li> <!-- Example: Link to /tips controller mapping -->
-          <li><a th:href="@{/omos}">Om Os</a></li> <!-- Example: Link to /om-os controller mapping -->
-          <li><a th:href="@{/madbanken}">Madbanken</a></li><!-- Example: Link to /kontakt controller mapping -->
-          <li><a th:href="@{/koleskaberen}">Køleskaberen</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-column">
-        <!-- Column 3: Contact Information -->
-        <h3>Kontakt os</h3>
-        <div class="contact-column">
-          <p><strong>Telefon:</strong></p>
-          <p>+45 9988 7766</p>
-          <p><strong>Mail:</strong></p>
-          <p>info@projektmadspild.dk</p> <!-- Placeholder -->
-          <p><strong>Adresse:</strong></p>
-          <p>Innovations Allé 1<br>2100 København Ø</p> <!-- Placeholder -->
-        </div>
-        <!-- Optional: Add social media icons here if relevant -->
-      </div>
-    </footer>
-
+    <div th:replace="~{fragments/footer :: footer}"></div>
   </div>
 </body>
 </html>
