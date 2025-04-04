@@ -4,25 +4,11 @@ import java.time.LocalDate;
 
 public class NewsletterSubscription {
 
-    private int newsletterId;
+
     private String email;
-    private LocalDate subscribeDate;
+    private boolean acceptTerms;
 
     public NewsletterSubscription() {
-    }
-
-    public NewsletterSubscription(int newsletterId, String email, LocalDate subscribeDate) {
-        this.newsletterId = newsletterId;
-        this.email = email;
-        this.subscribeDate = subscribeDate;
-    }
-
-    public int getNewsletterId() {
-        return newsletterId;
-    }
-
-    public void setNewsletterId(int newsletterId) {
-        this.newsletterId = newsletterId;
     }
 
     public String getEmail() {
@@ -33,11 +19,11 @@ public class NewsletterSubscription {
         this.email = email;
     }
 
-    public LocalDate getSubscribeDate() {
-        return subscribeDate;
+    public boolean isAcceptTerms() {
+        return acceptTerms;
     }
 
-    public void setSubscribeDate(LocalDate subscribeDate) {
-        this.subscribeDate = subscribeDate;
+    public void setAcceptTerms(boolean acceptTerms) {
+        this.acceptTerms = acceptTerms;
     }
 }
