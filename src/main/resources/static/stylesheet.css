@@ -44,6 +44,70 @@ header {
     background-color: var(--hover-color)
 }
 
+/* --- Dropdown Menu Start --- */
+
+/* Dropdown Container - Placeres ift. nav */
+.dropdown {
+    position: relative; /* Nødvendig for absolut positionering af dropdown-content */
+    float: right; /* Matcher float på de andre .nav a elementer */
+    margin: 0 10px; /* Matcher margin på de andre .nav a elementer */
+}
+
+/* Style selve "Tips&Tricks" linket (dropbtn) */
+.dropbtn {
+    /* Kopierer stilen fra .nav a for konsistens */
+    font-size: 18px;
+    color: var(--text-color);
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 9px;
+    padding: 6px 10px;
+    display: block; /* Gør at padding og border virker korrekt */
+    background-color: #EBE8E2; /* Matcher body baggrund, så den ikke er transparent */
+    cursor: pointer; /* Viser at det er interaktivt */
+}
+
+/* Hover effekt for dropbtn - matcher .nav a:hover */
+.dropdown:hover .dropbtn {
+    background-color: var(--hover-color);
+}
+
+/* Dropdown Indhold (Skjult som standard) */
+.dropdown-content {
+    display: none; /* Skjult indtil hover */
+    position: absolute; /* Positioneres ift. .dropdown container */
+    min-width: 160px; /* Eller bredde der passer til indholdet */
+    z-index: 1; /* Lægger sig ovenpå andet indhold */
+    top: 100%; /* Placeres lige under .dropbtn */
+    padding-top: 10px;
+    left: 0; /* Juster evt. til 'right: 0;' hvis den skal flugte til højre */
+}
+
+/* Links inde i dropdown-menuen */
+.dropdown-content a {
+    color: var(--text-color); /* Bruger din tekstfarve variabel */
+    padding: 10px 15px; /* Lidt mere luft end knapperne */
+    text-decoration: none;
+    display: block; /* Hvert link på sin egen linje */
+    text-align: left;
+    font-size: 16px; /* Lidt mindre end hovedmenuen evt. */
+    background-color: #EBE8E2;
+    /* Ingen border her */
+}
+
+/* Hover effekt for links i dropdown */
+.dropdown-content a:hover {
+    background-color: var(--hover-color); /* Bruger din hover variabel */
+}
+
+/* Vis dropdown-menuen når man hover over .dropdown containeren */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* --- Dropdown Menu Slut --- */
+
+
 
 .nav a {
     float: right;
@@ -163,7 +227,7 @@ footer {
 
 /* Aktiv viser hvilken underside man er inde på. */
 .aktiv{
-    background-color: #BFD0C1;
+    background-color: #BFD0C1 !important;
 }
 
 /* Om os Sektion */

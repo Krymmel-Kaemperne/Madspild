@@ -15,17 +15,21 @@
     <div class="logo">
       <a th:href="@{/}">Madspild.</a>
     </div>
-      <div class="nav">
-        <a th:href="@{/madbanken}">Madbanken</a>
-        <a th:href="@{/koleskaberen}">Køleskaberen</a>
-        <a class="aktiv" th:href="@{/fakta}">Fakta</a>
-        <a th:href="@{/tipstricks}">Tips&Tricks</a>
-        <a th:href="@{/omos}">Om os</a>
+    <div class="nav">
+      <a th:href="@{/madbanken}">Madbanken</a>
+      <a th:href="@{/koleskaberen}">Køleskaberen</a>
+      <a class="aktiv" th:href="@{/fakta}">Fakta</a>
+      <div class="dropdown">
+        <a th:href="@{/tipstricks}" class="dropbtn">Tips&Tricks ▾</a>
+        <div class="dropdown-content">
+          <a th:href="@{/saesonkalender}">Sæsonkalender</a>
+        </div>
       </div>
+      <a th:href="@{/omos}">Om os</a>
+    </div>
     <div class="log-in">
       <a href="#">Log ind</a>
     </div>
-
   </header>
 
   <div id="content" class="flex-container">

@@ -41,4 +41,9 @@ public class HomeController
     {
         return "tipstricks";
     }
+    @GetMapping("/saesonkalender")
+    public String saesonkalender()
+    {
+        return "saesonkalender";
+    }
 }
