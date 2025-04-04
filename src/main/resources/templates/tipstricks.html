@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div class="container">
+<div id="tips" class="container">
   <header>
     <div class="logo">
       <a th:href="@{/}">Madspild.</a>
@@ -28,122 +28,124 @@
 
   </header>
 
-  <div id="content" style="padding: 20px 40px;">
-    <div style="max-width: 1000px; margin: 0 auto;">
-    <h2 style="text-align: center; margin-bottom: 30px;">
-      Tips & Tricks til at Reducere Madspild
-    </h2>
+  <div id="content" class="flex-container">
+    <div class="tips-section">
+      <div class="text-content">
+        <h2>Tips & Tricks til at Reducere Madspild</h2>
 
-    <p style="margin-bottom: 25px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
-      Madspild er et stort problem, men heldigvis kan vi alle gøre en forskel!
-      Her er nogle praktiske tips til både private husholdninger og
-      virksomheder som supermarkeder og restauranter.
-    </p>
+        <div class="stat-box">
+          <p>Madspild er et stort problem, men heldigvis kan vi alle gøre en forskel!
+            Her er nogle praktiske tips til både private husholdninger og
+            virksomheder som supermarkeder og restauranter.</p>
+          <h3 style="margin-top: 20px">Tips til Forbrugere (Dig og Mig)</h3>
+          <ul>
+            <li>
+              <strong>Planlæg dine indkøb:</strong> Lav en madplan for ugen og skriv
+              en detaljeret indkøbsliste. Køb kun det, du har brug for.
+            </li>
+            <li>
+              <strong>Forstå datomærkning:</strong> Kend forskel på "Bedst før" (ofte
+              god efter) og "Sidste anvendelsesdato" (bør ikke spises efter). Brug
+              dine sanser (lugt, syn, smag) til at vurdere maden, især efter "Bedst
+              før".
+            </li>
+            <li>
+              <strong>Opbevar maden korrekt:</strong> Lær hvordan forskellige
+              fødevarer holder sig bedst (køleskab, fryser, spisekammer). Korrekt
+              opbevaring forlænger holdbarheden markant.
+            </li>
+            <li>
+              <strong>Elsk dine rester:</strong> Gem rester fra aftensmaden og brug
+              dem til frokost dagen efter, eller inkorporer dem i nye retter. Vær
+              kreativ!
+            </li>
+            <li>
+              <strong>Frys ned:</strong> Har du for meget brød, frugt, grønt eller
+              rester? Frys det ned til senere brug. Mange fødevarer kan sagtens
+              fryses.
+            </li>
+            <li>
+              <strong>"Først ind, først ud":</strong> Organiser dit køleskab og
+              spisekammer, så de ældste varer bruges først.
+            </li>
+            <li>
+              <strong>Brug det hele:</strong> Brug stokken på broccolien, toppen af
+              gulerødderne (til pesto f.eks.) eller kog fond på grøntsagsrester og
+              ben.
+            </li>
+          </ul>
+          <br>
+          <div class="photo3">
+            <img src="/img/koleskab.jpg" alt="Madspild i Danmark">
+          </div>
 
-    <!-- Sektion for Forbrugere -->
-    <section class="tips-section" style="margin-bottom: 40px;">
-      <h3>Tips til Forbrugere (Dig og Mig)</h3>
-      <ul>
-        <li>
-          <strong>Planlæg dine indkøb:</strong> Lav en madplan for ugen og skriv
-          en detaljeret indkøbsliste. Køb kun det, du har brug for.
-        </li>
-        <li>
-          <strong>Forstå datomærkning:</strong> Kend forskel på "Bedst før" (ofte
-          god efter) og "Sidste anvendelsesdato" (bør ikke spises efter). Brug
-          dine sanser (lugt, syn, smag) til at vurdere maden, især efter "Bedst
-          før".
-        </li>
-        <li>
-          <strong>Opbevar maden korrekt:</strong> Lær hvordan forskellige
-          fødevarer holder sig bedst (køleskab, fryser, spisekammer). Korrekt
-          opbevaring forlænger holdbarheden markant.
-        </li>
-        <li>
-          <strong>Elsk dine rester:</strong> Gem rester fra aftensmaden og brug
-          dem til frokost dagen efter, eller inkorporer dem i nye retter. Vær
-          kreativ!
-        </li>
-        <li>
-          <strong>Frys ned:</strong> Har du for meget brød, frugt, grønt eller
-          rester? Frys det ned til senere brug. Mange fødevarer kan sagtens
-          fryses.
-        </li>
-        <li>
-          <strong>"Først ind, først ud":</strong> Organiser dit køleskab og
-          spisekammer, så de ældste varer bruges først.
-        </li>
-        <li>
-          <strong>Brug det hele:</strong> Brug stokken på broccolien, toppen af
-          gulerødderne (til pesto f.eks.) eller kog fond på grøntsagsrester og
-          ben.
-        </li>
-      </ul>
-    </section>
+          <br>
+          <h3>For Supermarkeder:</h3>
+          <ul>
+            <li>
+              <strong>Sælg "skæve" varer:</strong> Tilbyd frugt og grønt, der ikke
+              lever op til skønhedsidealerne, til nedsat pris.
+            </li>
+            <li>
+              <strong>Dynamisk prissætning:</strong> Sænk prisen på varer, der nærmer
+              sig udløbsdatoen, for at fremme salg.
+            </li>
+            <li>
+              <strong>Donation af overskudsmad:</strong> Samarbejd med
+              organisationer som Fødevarebanken for at donere spiselig overskudsmad.
+            </li>
+            <li>
+              <strong>Optimeret lagerstyring:</strong> Brug data og teknologi til at
+              forudsige efterspørgsel mere præcist og undgå overbestilling.
+            </li>
+            <li>
+              <strong>Klar kommunikation:</strong> Informer kunderne om forskellen på
+              datomærkninger og inspirer dem til at mindske spild.
+            </li>
+          </ul>
 
-    <!-- Sektion for Virksomheder -->
-    <section class="tips-section">
-      <h3>Tips til Virksomheder (Supermarkeder & Restauranter)</h3>
 
-      <h4>For Supermarkeder:</h4>
-      <ul>
-        <li>
-          <strong>Sælg "skæve" varer:</strong> Tilbyd frugt og grønt, der ikke
-          lever op til skønhedsidealerne, til nedsat pris.
-        </li>
-        <li>
-          <strong>Dynamisk prissætning:</strong> Sænk prisen på varer, der nærmer
-          sig udløbsdatoen, for at fremme salg.
-        </li>
-        <li>
-          <strong>Donation af overskudsmad:</strong> Samarbejd med
-          organisationer som Fødevarebanken for at donere spiselig overskudsmad.
-        </li>
-        <li>
-          <strong>Optimeret lagerstyring:</strong> Brug data og teknologi til at
-          forudsige efterspørgsel mere præcist og undgå overbestilling.
-        </li>
-        <li>
-          <strong>Klar kommunikation:</strong> Informer kunderne om forskellen på
-          datomærkninger og inspirer dem til at mindske spild.
-        </li>
-      </ul>
-
-      <h4 style="margin-top: 20px;">For Restauranter & Caféer:</h4>
-      <ul>
-        <li>
-          <strong>Fleksible portionsstørrelser:</strong> Tilbyd mindre portioner
-          eller mulighed for at vælge størrelse for at undgå, at gæster levner.
-        </li>
-        <li>
-          <strong>Kreativ menuplanlægning:</strong> Design menuer, der udnytter
-          ingredienserne fuldt ud ("root-to-stem", "nose-to-tail"). Brug rester i
-          nye retter (f.eks. dagens suppe).
-        </li>
-        <li>
-          <strong>Træning af personale:</strong> Uddan personalet i korrekt
-          opbevaring, tilberedningsteknikker der minimerer spild, og
-          portionskontrol.
-        </li>
-        <li>
-          <strong>Tilbyd "Doggy Bags":</strong> Gør det nemt og acceptabelt for
-          gæster at tage deres rester med hjem.
-        </li>
-        <li>
-          <strong>Samarbejde med apps:</strong> Brug platforme som "Too Good To
-          Go" til at sælge overskudsmad ved lukketid til nedsat pris.
-        </li>
-        <li>
-          <strong>Præcis bestilling:</strong> Hold styr på lageret og bestil kun
-          de nødvendige mængder råvarer.
-        </li>
-      </ul>
-    </section>
-
-    <p style="margin-top: 40px; text-align: center; font-weight: bold;">
-      Sammen kan vi bekæmpe madspild – ét måltid ad gangen!
-    </p>
+          <br>
+          <h3>For Restauranter & Caféer:</h3>
+          <ul>
+            <li>
+              <strong>Fleksible portionsstørrelser:</strong> Tilbyd mindre portioner
+              eller mulighed for at vælge størrelse for at undgå, at gæster levner.
+            </li>
+            <li>
+              <strong>Kreativ menuplanlægning:</strong> Design menuer, der udnytter
+              ingredienserne fuldt ud ("root-to-stem", "nose-to-tail"). Brug rester i
+              nye retter (f.eks. dagens suppe).
+            </li>
+            <li>
+              <strong>Træning af personale:</strong> Uddan personalet i korrekt
+              opbevaring, tilberedningsteknikker der minimerer spild, og
+              portionskontrol.
+            </li>
+            <li>
+              <strong>Tilbyd "Doggy Bags":</strong> Gør det nemt og acceptabelt for
+              gæster at tage deres rester med hjem.
+            </li>
+            <li>
+              <strong>Samarbejde med apps:</strong> Brug platforme som "Too Good To
+              Go" til at sælge overskudsmad ved lukketid til nedsat pris.
+            </li>
+            <li>
+              <strong>Præcis bestilling:</strong> Hold styr på lageret og bestil kun
+              de nødvendige mængder råvarer.
+            </li>
+          </ul>
+          <br>  
+          <div class="photo3">
+            <img src="/img/restaurant.png" alt="Madspild i Danmark">
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+
+
+
   </div>
 
   <footer>
