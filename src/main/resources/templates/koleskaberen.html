@@ -34,6 +34,7 @@
 
   <div id="content">
     <div class="koleskaberen-container">
+      <!-- Venstre sektion -->
       <div class="left-section">
         <h1>Køleskaberen</h1>
         <p>
@@ -41,28 +42,40 @@
           Vi har gjort det nemt at finde inspiration til, hvordan du kan bruge din mad!<br>
           Indtast blot din madvare og køleskaberen giver dig forslag til lækre opskrifter og andre kreative brugsmuligheder!
         </p>
-        <input type="text" id="food-search" placeholder="Indtast en fødevare...">
-        <button id="search-btn">Søg</button>
+        <form th:action="@{/koleskaberen}" method="get">
+          <input type="text" name="ingredient" placeholder="Indtast en ingrediens..." th:value="${ingredient}">
+          <button type="submit">Søg</button>
+        </form>
       </div>
+
       <div class="right-section">
-        <div class="recipe-flex-container">
-          <div class="recipe-item">
-            <img src="https://via.placeholder.com/150" alt="Placeholder Recipe Photo" class="recipe-photo">
-            <p>Recipe 1</p>
+        <!-- Vis opskriftsdetaljer -->
+        <div th:if="${showRecipeDetails}" class="recipe-details">
+          <!-- ${...} er for at hente den variabel vi har defineret i controlleren"addAttribute"-->
+          <div class="recipe-content">
+            <h2 th:text="${recipeName}">Recipe Name</h2>
+            <img th:src="${recipeImage}" alt="Recipe Image" class="recipe-image">
+            <p th:utext="${recipeInstructions}">Recipe Instructions</p>
+            <a th:href="@{/koleskaberen(ingredient=${ingredient})}" class="back-button">Tilbage</a>
+
           </div>
-          <div class="recipe-item">
-            <img src="https://via.placeholder.com/150" alt="Placeholder Recipe Photo" class="recipe-photo">
-            <p>Recipe 2</p>
-          </div>
-          <div class="recipe-item">
-            <img src="https://via.placeholder.com/150" alt="Placeholder Recipe Photo" class="recipe-photo">
-            <p>Recipe 3</p>
-          </div>
+        </div>
+
+        <!-- Vis køleskabsbilledet -->
+        <div th:if="${showFridgeImage}" class="fridge-image">
+          <img src="/img/openfridge.jpg" alt="Fridge Image">
+        </div>
+
+        <!-- Vis opskrifter -->
+        <div th:if="!${showFridgeImage} and !${showRecipeDetails}" class="recipe-flex-container">
+          <a th:each="recipe : ${recipes}" th:href="@{/koleskaberen(recipeID=${recipe.recipeID})}" class="recipe-item">
+            <img th:src="${recipe.imagePath}" th:alt="${recipe.recipeName}" class="recipe-photo">
+            <p th:text="${recipe.recipeName}">Recipe Name</p>
+          </a>
         </div>
       </div>
     </div>
-</div>
-
+  </div>
   <div th:replace="~{fragments/footer :: footer}"></div>
 
 </div>
