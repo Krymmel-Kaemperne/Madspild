@@ -37,4 +37,19 @@ public class HomeController {
     {
         return "saesonkalender";
     }
+
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
+
+    @GetMapping("/opretBruger")
+    public String opretBruger() {
+        return "opretBruger";
+    }
+
+    @GetMapping("/minSide")
+    public String minSide() {
+        return "minSide";
+    }
 }
