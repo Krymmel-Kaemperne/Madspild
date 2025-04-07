@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 @Controller
 public class KoleskaberenController {
-//hashmap til at så man kan søge på som opbevarer et objekt af recipe, baseret på recipeID
+    //hashmap til at så man kan søge på som opbevarer et objekt af recipe, baseret på recipeID
     private final Map<Integer, Recipe> recipes = new HashMap<>();
 
 
@@ -96,30 +96,39 @@ public class KoleskaberenController {
 
     @GetMapping("/koleskaberen")
     public String koleskaberen(
-            //kigger på url efter en af følgende parametre
             @RequestParam(value = "ingredient", required = false) String ingredient,
             @RequestParam(value = "recipeID", required = false) Integer recipeID,
             Model model) {
-        //hvis den finder et recipeID i url, tilføjes disse parametre til modellen, så thymeleaf kan vise opskriften
         if (recipeID != null && recipes.containsKey(recipeID)) {
+            // Vis opskriftsdetaljer
             Recipe selectedRecipe = recipes.get(recipeID);
             model.addAttribute("showRecipeDetails", true);
             model.addAttribute("recipeName", selectedRecipe.getRecipeName());
             model.addAttribute("recipeInstructions", selectedRecipe.getRecipeInstructions());
             model.addAttribute("recipeImage", selectedRecipe.getImagePath());
+            model.addAttribute("showFridgeImage", false); // Skjul køleskabsbilledet
+            model.addAttribute("recipes", Collections.emptyList()); // Ingen opskrifter vises her
         } else if (ingredient == null || ingredient.isEmpty()) {
-            // hvis der hverken er recipeid eller ingrediens viser den køleskab.
+            // Vis køleskabsbilledet, hvis ingen ingrediens er angivet
             model.addAttribute("showFridgeImage", true);
+            model.addAttribute("showRecipeDetails", false); // Skjul opskriftsdetaljer
             model.addAttribute("recipes", Collections.emptyList());
         } else {
-            // Viser ingredienser baseret på hovedingrediensen.
+            // Filtrer opskrifter baseret på ingrediens
             List<Recipe> filteredRecipes = recipes.values().stream()
                     .filter(recipe -> recipe.getIngredient().getIngredientName().equalsIgnoreCase(ingredient))
                     .collect(Collectors.toList());
-            model.addAttribute("showFridgeImage", false);
+            model.addAttribute("showFridgeImage", false); // Skjul køleskabsbilledet
+            model.addAttribute("showRecipeDetails", false); // Skjul opskriftsdetaljer
             model.addAttribute("recipes", filteredRecipes);
+
+            // Hvis der ikke findes opskrifter, tilføj en besked
+            if (filteredRecipes.isEmpty()) {
+                model.addAttribute("noRecipesMessage", "Der er ingen opskrifter oprettet for ingrediensen " + ingredient + ". Prøv igen.");
+            }
         }
-        model.addAttribute("ingredient", ingredient); // Always pass the ingredient to Thymeleaf
+        model.addAttribute("ingredient", ingredient); // Send ingrediens til Thymeleaf
         return "koleskaberen";
     }
 }
+

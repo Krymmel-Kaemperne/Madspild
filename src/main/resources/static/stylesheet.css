@@ -14,6 +14,7 @@ body {
     background-color: #EBE8E2;
     color: var(--text-color);
     line-height: 1.6;
+    font-size: 16px;
 }
 
 .container {
@@ -49,13 +50,13 @@ header {
 /* Dropdown Container - Placeres ift. nav */
 .dropdown {
     position: relative; /* Nødvendig for absolut positionering af dropdown-content */
-    float: right; /* Matcher float på de andre .nav a elementer */
-    margin: 0 10px; /* Matcher margin på de andre .nav a elementer */
 }
 
 /* Style selve "Tips&Tricks" linket (dropbtn) */
+.nav a,
 .dropbtn {
     /* Kopierer stilen fra .nav a for konsistens */
+    width: 165px;
     font-size: 18px;
     color: var(--text-color);
     text-decoration: none;
@@ -65,6 +66,7 @@ header {
     display: block; /* Gør at padding og border virker korrekt */
     background-color: #EBE8E2; /* Matcher body baggrund, så den ikke er transparent */
     cursor: pointer; /* Viser at det er interaktivt */
+    text-align: center; /* centrer teksten */
 }
 
 /* Hover effekt for dropbtn - matcher .nav a:hover */
@@ -76,7 +78,6 @@ header {
 .dropdown-content {
     display: none; /* Skjult indtil hover */
     position: absolute; /* Positioneres ift. .dropdown container */
-    min-width: 160px; /* Eller bredde der passer til indholdet */
     z-index: 1; /* Lægger sig ovenpå andet indhold */
     top: 100%; /* Placeres lige under .dropbtn */
     padding-top: 10px;
@@ -90,7 +91,6 @@ header {
     text-decoration: none;
     display: block; /* Hvert link på sin egen linje */
     text-align: left;
-    font-size: 16px; /* Lidt mindre end hovedmenuen evt. */
     background-color: #EBE8E2;
     /* Ingen border her */
 }
@@ -107,22 +107,17 @@ header {
 
 /* --- Dropdown Menu Slut --- */
 
-
-
-.nav a {
-    float: right;
-    font-size: 18px;
-    color: var(--text-color);
-    text-decoration: none;
-    border: 1px solid black;
-    border-radius: 9px;
-    padding: 6px 10px;
-    margin: 0 10px;
-}
-
 .nav a:hover {
     background-color: var(--hover-color)
 }
+
+.nav {
+    display: flex;
+    justify-content: center; /* centrerer hele menuen */
+    align-items: center;
+    gap: 10px; /* afstand mellem bokse */
+}
+
 
 
 .log-in a {
@@ -363,6 +358,8 @@ footer {
 .stat-box ul li {
     padding: 5px 0;
     font-size: 16px;
+    list-style: disc;
+    margin-left:15px;
 }
 
 .photo1 img {
@@ -538,19 +535,22 @@ Køleskaberen
  */
 .koleskaberen-container {
     display: grid;
+    background-color: #f9f9f9;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     margin: 50px auto;
     max-width: 1200px;
+    border-radius: 10px;
     min-height: 100vh; /* Ensure it takes at least the full viewport height */
     height: auto;
-    border: 2px solid red; /* Debugging border */
+
+   /* border: 2px solid red; /* Debugging border */
 }
 
 .left-section {
     grid-column: 1;
     padding: 20px;
-    border: 2px solid blue; /* Debugging border */
+   /* border: 2px solid blue; /* Debugging border */
 }
 .right-section {
     grid-column: 2;
@@ -558,19 +558,18 @@ Køleskaberen
     justify-content: center;
     align-items: center;
     padding: 5px;
-    border: 2px purple;
+    /*border: 2px purple;*/
 }
 
 .recipe-flex-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
-    gap: 20px; /* Space between items */
+    gap: 20px;
     padding: 20px;
-    width: 100%; /* Full width of the right section */
+    width: 100%;
     height: 100%;
-    border-radius: 10px; /* Optional: Add rounded corners */
+    border-radius: 10px;
 }
-
 .recipe-item {
     text-align: center;
     background-color: white;
@@ -663,4 +662,10 @@ Køleskaberen
     max-width: 400px;
     height: auto;
     border-radius: 10px;
+}
+.no-recipes-message {
+    font-family: "Almarai", sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+
 }

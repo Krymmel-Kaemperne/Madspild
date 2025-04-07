@@ -1,76 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
-  <meta charset="UTF-8">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+          href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap"
+          rel="stylesheet"
+  />
   <title>Madspild</title>
-  <link rel="stylesheet" href="/stylesheet.css">
+  <link rel="stylesheet" href="/stylesheet.css" />
 </head>
 <body>
-
 <div id="tips" class="container">
-  <header>
-    <div class="logo">
-      <a th:href="@{/}">Madspild.</a>
-    </div>
-    <div class="nav">
-      <a th:href="@{/madbanken}">Madbanken</a>
-      <a th:href="@{/koleskaberen}">Køleskaberen</a>
-      <a th:href="@{/fakta}">Fakta</a>
-      <div class="dropdown">
-        <a class="aktiv dropbtn" th:href="@{/saesonkalender}">Sæsonkalender ▾</a>
-        <div class="dropdown-content">
-          <a th:href="@{/tipstricks}" class="">Tips&Tricks</a>
-        </div>
-      </div>
-      <a th:href="@{/omos}">Om os</a>
-    </div>
-    <div class="log-in">
-      <a href="#">Log ind</a>
-    </div>
-  </header>
+  <div th:replace="fragments/header :: header('saesonkalender')"></div>
+
 
   <div id="content" class="flex-container">
     <div class="tips-section">
       <div class="text-content">
-        <h2>Sæsonkalender & Tips mod Madspild</h2>
+        <h2>Sæsonkalender & Tips</h2>
         <p>
           Spis efter sæsonen for bedre smag, pris og mindre madspild. Her er
           en oversigt over danske råvarer og tips til at udnytte dem bedst.
         </p>
 
-        <!-- Container for sæson-blokkene -->
         <div class="season-calendar">
-
           <!-- Forår -->
           <div class="season-block spring">
             <h3>Forår (Marts - Maj)</h3>
             <h4>Typisk i sæson:</h4>
             <ul>
-              <li>Asparges</li>
-              <li>Rabarber</li>
-              <li>Nye kartofler</li>
+              <li>Rabarber (fra april)</li>
+              <li>Asparges (fra slut april/maj)</li>
               <li>Radiser</li>
               <li>Spinat</li>
               <li>Forårsløg</li>
               <li>Spidskål (sen forår)</li>
+              <li>Nye kartofler (sidst i maj/juni)</li>
             </ul>
             <h4>Tips mod madspild:</h4>
             <ul>
+              <li><strong>Asparges:</strong> Gem enderne til fond.</li>
               <li>
-                <strong>Asparges:</strong> Gem enderne til fond.
+                <strong>Rabarber:</strong> Bløde? Lav kompot/grød (fjern
+                blade!).
               </li>
               <li>
-                <strong>Rabarber:</strong> Bløde? Lav kompot/grød (Fjern blade!).
+                <strong>Nye kartofler:</strong> Skrub i stedet for at
+                skrælle. Brug kolde rester i salat.
               </li>
               <li>
-                <strong>Nye kartofler:</strong> Skrub, ikke skrælle. Brug kolde
-                rester i salat.
-              </li>
-              <li>
-                <strong>Spinat:</strong> Opfrisk i isvand. Brug stilke.
+                <strong>Spinat:</strong> Opfrisk i isvand. Brug stilkene.
               </li>
             </ul>
           </div>
@@ -80,27 +61,31 @@
             <h3>Sommer (Juni - August)</h3>
             <h4>Typisk i sæson:</h4>
             <ul>
-              <li>Jordbær, hindbær, brombær, solbær</li>
-              <li>Ærter & Bønner</li>
-              <li>Agurk & Tomat</li>
+              <li>Jordbær (juni-juli)</li>
+              <li>Hindbær, brombær, solbær (juli-august)</li>
+              <li>Ærter & bønner</li>
+              <li>Agurk & tomat</li>
               <li>Squash</li>
               <li>Sommerkål</li>
-              <li>Nye løg & Hvidløg</li>
-              <li>Tidlige æbler & Blommer</li>
+              <li>Nye løg & hvidløg</li>
+              <li>Tidlige æbler & blommer (juli/august)</li>
+              <li>Majs (august-september)</li>
+              <li>Fennikel (juli-oktober)</li>
+              <li>Blomkål (juni-oktober)</li>
             </ul>
             <h4>Tips mod madspild:</h4>
             <ul>
               <li>
-                <strong>Bær:</strong> Frys overskud ned (spredt ud først). Brug
+                <strong>Bær:</strong> Frys overskud (spredt ud først). Brug
                 bløde til grød/coulis.
               </li>
               <li>
-                <strong>Ærter/Bønner:</strong> Brug sukkerærtebælge. Blancher &
-                frys bønner.
+                <strong>Ærter/bønner:</strong> Brug sukkerærtebælge.
+                Blancher & frys bønner.
               </li>
               <li>
-                <strong>Agurk/Squash:</strong> Opfrisk agurk i vand. Riv & frys
-                squash.
+                <strong>Agurk/squash:</strong> Opfrisk agurk i vand. Riv &
+                frys squash.
               </li>
               <li>
                 <strong>Krydderurter:</strong> Frys i olie/vand i
@@ -114,23 +99,23 @@
             <h3>Efterår (September - November)</h3>
             <h4>Typisk i sæson:</h4>
             <ul>
-              <li>Æbler & Pærer</li>
+              <li>Æbler & pærer</li>
               <li>Blommer</li>
-              <li>Rodfrugter (Gulerod, Pastinak, Rødbede...)</li>
-              <li>Kål (Hvid-, Rød-, Grøn-, Rosenkål...)</li>
-              <li>Græskar & Squash</li>
+              <li>Rodfrugter (gulerod, pastinak, rødbede, selleri)</li>
+              <li>Kål (hvid-, rød-, grøn-, rosenkål)</li>
+              <li>Græskar & squash</li>
               <li>Porrer</li>
-              <li>Svampe</li>
+              <li>Svampe (august-oktober)</li>
             </ul>
             <h4>Tips mod madspild:</h4>
             <ul>
               <li>
-                <strong>Æbler/Pærer:</strong> Brug stødte til mos/kage. Opbevar
-                køligt.
+                <strong>Æbler/pærer:</strong> Brug stødte til mos/kage.
+                Opbevar køligt.
               </li>
               <li>
-                <strong>Rodfrugter:</strong> Gem skræller (øko) til fond/chips.
-                Brug bløde i suppe/mos.
+                <strong>Rodfrugter:</strong> Gem skræller (øko) til
+                fond/chips. Brug bløde i suppe/mos.
               </li>
               <li>
                 <strong>Kål:</strong> Brug stokken fra broccoli/blomkål.
@@ -139,7 +124,8 @@
                 <strong>Græskar:</strong> Rist kernerne. Frys puré.
               </li>
               <li>
-                <strong>Porrer:</strong> Brug den grønne top til fond/gryderetter.
+                <strong>Porrer:</strong> Brug den grønne top til fond eller
+                gryderetter.
               </li>
             </ul>
           </div>
@@ -149,42 +135,40 @@
             <h3>Vinter (December - Februar)</h3>
             <h4>Typisk i sæson:</h4>
             <ul>
-              <li>Rodfrugter (som efterår + Jordskokker...)</li>
-              <li>Kål (som efterår)</li>
+              <li>
+                Rodfrugter (som efterår + jordskokker, knoldselleri)
+              </li>
+              <li>Kål (hvid-, rød-, grøn-, rosenkål, grønkål)</li>
               <li>Porrer</li>
-              <li>Løg & Hvidløg (lagrede)</li>
-              <li>Æbler & Pærer (lagrede)</li>
+              <li>Løg & hvidløg (lagrede)</li>
+              <li>Æbler & pærer (lagrede)</li>
+              <li>Græskar (lagrede)</li>
             </ul>
             <h4>Tips mod madspild:</h4>
             <ul>
               <li>
-                <strong>Rodfrugter & Kål:</strong> Perfekte til simreretter,
+                <strong>Rodfrugter & kål:</strong> Perfekte til simreretter,
                 supper, mos.
               </li>
               <li>
-                <strong>Planlægning:</strong> Brug af fryserens gemmer.
+                <strong>Planlægning:</strong> Brug fryserens gemmer.
               </li>
               <li>
-                <strong>Citrusfrugter (Import):</strong> Brug skallen (øko) før
-                saften.
+                <strong>Citrusfrugter (import):</strong> Brug skallen (øko)
+                før saften.
               </li>
               <li>
-                <strong>Tjek lageret:</strong> Fjern dårlige æbler/løg etc.
+                <strong>Tjek lageret:</strong> Fjern dårlige æbler/løg
                 jævnligt.
               </li>
             </ul>
           </div>
-
-        </div> <!-- End season-calendar -->
-      </div> <!-- End text-content -->
-    </div> <!-- End tips-section -->
-  </div> <!-- End content -->
-
-
-
+        </div>
+      </div>
+    </div>
   </div>
 
-<div th:replace="~{fragments/footer :: footer}"></div>
+  <div th:replace="~{fragments/footer :: footer}"></div>
 </div>
 </body>
 </html>

@@ -11,31 +11,13 @@
 </head>
 <body>
 <div class="container">
-    <header>
-        <div class="logo">
-            <a th:href="@{/}">Madspild.</a>
-        </div>
-        <div class="nav">
-            <a th:href="@{/madbanken}">Madbanken</a>
-            <a th:href="@{/koleskaberen}">Køleskaberen</a>
-            <a th:href="@{/fakta}">Fakta</a>
-            <div class="dropdown">
-                <a th:href="@{/tipstricks}" class="dropbtn">Tips&Tricks ▾</a>
-                <div class="dropdown-content">
-                    <a th:href="@{/saesonkalender}">Sæsonkalender</a>
-                </div>
-            </div>
-            <a class="aktiv" th:href="@{/omos}">Om os</a>
-        </div>
-        <div class="log-in">
-            <a href="#">Log ind</a>
-        </div>
-    </header>
+    <div th:replace="fragments/header :: header('omos')"></div>
+
 
 
     <div id="content">
-        <div class="about-section">
-            <div class="about-text">
+        <div class="fakta-section">
+            <div class="text-content">
 
             <h2>Om Operation Madspild</h2>
 
@@ -63,7 +45,7 @@
                     Du kan her på siden se på specifikke tips til, hvordan du kan mindske madspillet og
                     hvis du er virksomhed, eller velgørenhedsorganisation tage del i vores donationsordninger.
                 </p>
-
+                <br>
         </div>
         <div class="about-image">
             <img src="/img/FoodWasteOmOs.png" alt="Ikke smid ud :(">
