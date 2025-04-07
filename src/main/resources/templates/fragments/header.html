@@ -42,9 +42,11 @@
         >Om os</a
         >
     </div>
-    <div class="log-in">
-        <a href="#">Log ind</a>
-    </div>
+        <div class="log-in">
+            <a th:href="@{/login}"
+               th:classappend="${currentPage == 'login'} ? 'aktiv' : ''"
+            >Log ind</a>
+        </div>
 </header>
 </body>
 </html>

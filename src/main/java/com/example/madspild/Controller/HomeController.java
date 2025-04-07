@@ -2,7 +2,7 @@ package com.example.madspild.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 public class HomeController {
@@ -43,9 +43,9 @@ public class HomeController {
         return "login";
     }
 
-    @GetMapping("/opretBruger")
+    @GetMapping("/opretbruger")
     public String opretBruger() {
-        return "opretBruger";
+        return "opretbruger";
     }
 
     @GetMapping("/minSide")
