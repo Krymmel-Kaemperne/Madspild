@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="da" xmlns:th="http://www.thymeleaf.org">
+<body>
+<header th:fragment="header(currentPage)">
+    <div class="logo">
+        <a th:href="@{/}">Madspild.</a>
+    </div>
+    <div class="nav">
+        <a
+                th:href="@{/madbanken}"
+                th:classappend="${currentPage == 'madbanken'} ? 'aktiv' : ''"
+        >Madbanken</a
+        >
+        <a
+                th:href="@{/koleskaberen}"
+                th:classappend="${currentPage == 'koleskaberen'} ? 'aktiv' : ''"
+        >Køleskaberen</a
+        >
+        <a
+                th:href="@{/fakta}"
+                th:classappend="${currentPage == 'fakta'} ? 'aktiv' : ''"
+        >Fakta</a
+        >
+        <div class="dropdown">
+            <a
+                    th:href="@{/tipstricks}"
+                    class="dropbtn"
+                    th:classappend="${currentPage == 'tipstricks'} ? 'aktiv' : ''"
+            >Tips&Tricks ▾</a
+            >
+            <div class="dropdown-content">
+                <a
+                        th:href="@{/saesonkalender}"
+                        th:classappend="${currentPage == 'saesonkalender'} ? 'aktiv' : ''"
+                >Sæsonkalender</a
+                >
+            </div>
+        </div>
+        <a
+                th:href="@{/omos}"
+                th:classappend="${currentPage == 'omos'} ? 'aktiv' : ''"
+        >Om os</a
+        >
+    </div>
+    <div class="log-in">
+        <a href="#">Log ind</a>
+    </div>
+</header>
+</body>
+</html>
