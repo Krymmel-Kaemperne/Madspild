@@ -21,27 +21,48 @@
                 th:classappend="${currentPage == 'fakta'} ? 'aktiv' : ''"
         >Fakta</a
         >
+
         <div class="dropdown">
+            <!-- Dropdown-knap: skifter tekst og aktiv-klasse -->
             <a
+                    th:if="${currentPage != 'saesonkalender'}"
                     th:href="@{/tipstricks}"
                     class="dropbtn"
                     th:classappend="${currentPage == 'tipstricks'} ? 'aktiv' : ''"
             >Tips&Tricks ▾</a
             >
+            <a
+                    th:if="${currentPage == 'saesonkalender'}"
+                    th:href="@{/saesonkalender}"
+                    class="dropbtn"
+                    th:classappend="${currentPage == 'saesonkalender'} ? 'aktiv' : ''"
+            >Sæsonkalender ▾</a
+            >
+
+            <!-- Dropdown-indhold: viser det modsatte link -->
             <div class="dropdown-content">
                 <a
                         th:href="@{/saesonkalender}"
+                        th:if="${currentPage != 'saesonkalender'}"
                         th:classappend="${currentPage == 'saesonkalender'} ? 'aktiv' : ''"
                 >Sæsonkalender</a
                 >
+                <a
+                        th:href="@{/tipstricks}"
+                        th:if="${currentPage == 'saesonkalender'}"
+                        th:classappend="${currentPage == 'tipstricks'} ? 'aktiv' : ''"
+                >Tips&Tricks</a
+                >
             </div>
         </div>
+
         <a
                 th:href="@{/omos}"
                 th:classappend="${currentPage == 'omos'} ? 'aktiv' : ''"
         >Om os</a
         >
     </div>
+
     <div class="log-in">
         <a href="#">Log ind</a>
     </div>
