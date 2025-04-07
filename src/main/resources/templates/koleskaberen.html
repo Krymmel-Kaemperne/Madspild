@@ -28,18 +28,21 @@
           <input type="text" name="ingredient" placeholder="Indtast en ingrediens..." th:value="${ingredient}">
           <button type="submit">Søg</button>
         </form>
+        <p><br></p>
+        <!-- Vis besked, hvis der ikke er opskrifter -->
+        <div th:if="${recipes.empty}" class="no-recipes-message">
+          <p th:text="${noRecipesMessage}">Der er ingen opskrifter oprettet for ingrediensen.</p>
+        </div>
       </div>
 
+      <!-- Højre sektion -->
       <div class="right-section">
         <!-- Vis opskriftsdetaljer -->
         <div th:if="${showRecipeDetails}" class="recipe-details">
-          <!-- ${...} er for at hente den variabel vi har defineret i controlleren"addAttribute"-->
           <div class="recipe-content">
             <h2 th:text="${recipeName}">Recipe Name</h2>
             <img th:src="${recipeImage}" alt="Recipe Image" class="recipe-image">
             <p th:utext="${recipeInstructions}">Recipe Instructions</p>
-            <a th:href="@{/koleskaberen(ingredient=${ingredient})}" class="back-button">Tilbage</a>
-
           </div>
         </div>
 
@@ -49,16 +52,17 @@
         </div>
 
         <!-- Vis opskrifter -->
-        <div th:if="!${showFridgeImage} and !${showRecipeDetails}" class="recipe-flex-container">
+        <div th:if="!${recipes.empty}" class="recipe-flex-container">
           <a th:each="recipe : ${recipes}" th:href="@{/koleskaberen(recipeID=${recipe.recipeID})}" class="recipe-item">
             <img th:src="${recipe.imagePath}" th:alt="${recipe.recipeName}" class="recipe-photo">
             <p th:text="${recipe.recipeName}">Recipe Name</p>
+
           </a>
         </div>
       </div>
     </div>
-  </div>
-  <div th:replace="~{fragments/footer :: footer}"></div>
+
+    <div th:replace="~{fragments/footer :: footer}"></div>
 
 </div>
 </body>
