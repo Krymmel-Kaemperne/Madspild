@@ -775,7 +775,7 @@ Køleskaberen
 .newsletter-button:hover {
     background-color: #4cae4c;
 }
-=======
+
 .auth-form {
     display: flex;
     flex-direction: column;
@@ -837,3 +837,4 @@ Køleskaberen
     text-align: center;
     margin-bottom: 15px;
     font-size: 14px;
+}

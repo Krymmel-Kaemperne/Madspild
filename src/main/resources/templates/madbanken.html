@@ -41,13 +41,16 @@
                 <ul>
                     <li>🔹 Hvis du er velgørenhed, kan du kontakte virksomheder direkte via opslagene.
                     </li>
-                    <li>🔹 Hvis du er virksomhed og vil donere så <strong> <a th:href="${/opretLogin/login}"> log ind</a></strong> og
+                    <li>🔹 Hvis du er virksomhed og vil donere så <strong> <a th:href="@{/opretLogin/login}">log ind</a>
+
+                    </strong> og
                         begynd at bidrage til at mindske madspild.
                     </li>
 
                 </ul>
             </div>
         </div>
+            </div>
     </div>
 
     <div class="donation-opslag">
@@ -276,6 +279,6 @@
 </div>
 
 <div th:replace="~{fragments/footer :: footer}"></div>
-
+    </div>
 </body>
 </html>
