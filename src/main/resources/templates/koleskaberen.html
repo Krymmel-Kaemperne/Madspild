@@ -17,18 +17,24 @@
   <div id="content">
     <div class="koleskaberen-container">
       <!-- Venstre sektion -->
-      <div class="left-section">
-        <h1>Køleskaberen</h1>
+      <div class="top-section">
+        <h2>Køleskaberen</h2>
         <p>
           Har du en madvare som er ved at løbe på dato?<br>
           Vi har gjort det nemt at finde inspiration til, hvordan du kan bruge din mad!<br>
           Indtast blot din madvare og køleskaberen giver dig forslag til lækre opskrifter og andre kreative brugsmuligheder!
         </p>
-        <form th:action="@{/koleskaberen}" method="get">
-          <input type="text" name="ingredient" placeholder="Indtast en ingrediens..." th:value="${ingredient}">
+        <br>
+        <p><em>Prototype: æg og kartoffel.</em></p>
+        <form class="search-form" th:action="@{/koleskaberen}" method="get">
+          <input
+                  type="text"
+                  name="ingredient"
+                  placeholder="Indtast en ingrediens..."
+                  th:value="${ingredient}"
+          />
           <button type="submit">Søg</button>
         </form>
-        <p><br></p>
         <!-- Vis besked, hvis der ikke er opskrifter -->
         <div th:if="${recipes.empty}" class="no-recipes-message">
           <p th:text="${noRecipesMessage}">Der er ingen opskrifter oprettet for ingrediensen.</p>
@@ -36,19 +42,19 @@
       </div>
 
       <!-- Højre sektion -->
-      <div class="right-section">
+      <div class="bottom-section">
         <!-- Vis opskriftsdetaljer -->
         <div th:if="${showRecipeDetails}" class="recipe-details">
           <div class="recipe-content">
             <h2 th:text="${recipeName}">Recipe Name</h2>
             <img th:src="${recipeImage}" alt="Recipe Image" class="recipe-image">
-            <p th:utext="${recipeInstructions}">Recipe Instructions</p>
+            <p class="recipe-instructions" th:utext="${recipeInstructions}">Recipe Instructions</p>
           </div>
         </div>
 
         <!-- Vis køleskabsbilledet -->
         <div th:if="${showFridgeImage}" class="fridge-image">
-          <img src="/img/openfridge.jpg" alt="Fridge Image">
+          <img src="/img/openfridge.png" alt="Fridge Image">
         </div>
 
         <!-- Vis opskrifter -->
@@ -64,6 +70,6 @@
 
     <div th:replace="~{fragments/footer :: footer}"></div>
 
-</div>
+  </div>
 </body>
 </html>
