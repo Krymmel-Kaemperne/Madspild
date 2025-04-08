@@ -10,22 +10,25 @@
     <link rel="stylesheet" href="/stylesheet.css">
 </head>
 <body>
-  <div class="container">
-      <div th:replace="fragments/header :: header('omos')"></div>
-
+<div class="container">
+    <div th:replace="fragments/header :: header('tak-for-tilmelding')"></div>
 
     <div id="content">
-      <h1>Tak for din tilmelding!</h1>
+        <div class="thank-you-box">
+            <h1>Tak for din tilmelding!</h1>
 
-      <div th:if="${email}" class="email-confirmation">
-        <h3>Vi har sendt en bekræftelse til:</h3>
-        <p th:text="${email}" style="font-weight: bold;"></p>
-        <p>Tjek din indbakke for vores velkomstemail.</p>
-      </div>
+            <div th:if="${email}" class="email-confirmation">
+                <h3>Vi har sendt en bekræftelse til:</h3>
+                <p th:text="${email}"></p>
+                <p>Tjek din indbakke for vores velkomstemail.</p>
+            </div>
 
-      <a th:href="@{/}" class="button">Tilbage til forsiden</a>
+            <a th:href="@{/}" class="newsletter-button">Tilbage til forsiden</a>
+        </div>
     </div>
+
     <div th:replace="~{fragments/footer :: footer}"></div>
-  </div>
+</div>
+
 </body>
 </html>

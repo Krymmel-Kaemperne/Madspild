@@ -62,11 +62,14 @@
         >Om os</a
         >
     </div>
-        <div class="log-in">
-            <a th:href="@{/opretLogin/login}"
-               th:classappend="${currentPage == 'login'} ? 'aktiv' : ''"
-            >Log ind</a>
-        </div>
+    <div class="log-in">
+        <a
+                th:href="@{/opretLogin/login}"
+                th:classappend="${currentPage == 'login'} ? 'aktiv' : ''"
+                th:text="${currentPage == 'minSide'} ? 'Log ud' : 'Log ind'">
+        </a>
+    </div>
+
 
 </header>
 </body>
