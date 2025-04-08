@@ -32,20 +32,11 @@ public class HomeController {
     {
         return "tipstricks";
     }
+
     @GetMapping("/saesonkalender")
     public String saesonkalender()
     {
         return "saesonkalender";
-    }
-
-    @GetMapping("/login")
-    public String login() {
-        return "login";
-    }
-
-    @GetMapping("/opretbruger")
-    public String opretBruger() {
-        return "opretbruger";
     }
 
     @GetMapping("/minSide")

@@ -5,17 +5,21 @@ import com.example.madspild.Service.CompanyUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
+@RequestMapping("/opretLogin")
 public class LoginOpretController {
 
     @Autowired
     CompanyUserService companyUserService;
 
-    CompanyUser currentUser;
+    //CompanyUser currentUser;
+
+    @GetMapping("/login")
+    public String showLogin() {
+        return "login";
+    }
 
     @PostMapping("/login")
     public String login(@RequestParam String email, @RequestParam String password, Model model) {
@@ -23,9 +27,15 @@ public class LoginOpretController {
         if(user != null) {
             return "redirect:/minSide";
         } else {
-            model.addAttribute("error", "Forkert email eller CVR");
+            model.addAttribute("error", "Forkert email eller Password");
             return "login";
         }
+    }
+
+    @GetMapping("/opretBruger")
+    public String showLoginForm(Model model) {
+        model.addAttribute("companyUser", new CompanyUser());
+        return "opretBruger";
     }
 
     @PostMapping("/opretBruger")
@@ -44,9 +54,13 @@ public class LoginOpretController {
             return "opretBruger";
         }
 
+        if(String.valueOf(companyUser.getCvr()).length() != 8) {
+            model.addAttribute("error", "CVR ikke gyldigt");
+            return "opretBruger";
+        }
+
         companyUserService.addCompanyUser(companyUser);
-        currentUser = companyUser;
-        return "redirect:/minSide";
+        return "redirect:/opretLogin/login";
     }
 
 }

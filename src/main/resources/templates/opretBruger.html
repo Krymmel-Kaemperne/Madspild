@@ -15,10 +15,10 @@
 
     <div th:replace="fragments/header :: header('')"></div>
 
-    <div class="loginOpret-container">
+    <div class="auth-container">
         <h2>Opret virksomhedsbruger</h2>
         <div th:if="${error}" class="error-message" th:text="${error}"></div>
-        <form class="loginOpret-form" th:action="@{/opretBruger}" method="post" th:object="${companyUser}">
+        <form class="loginOpret-form" th:action="@{/opretLogin/opretBruger}" method="post" th:object="${companyUser}">
             <div class="form-group">
                 <label for="name">Virksomhedsnavn:</label>
                 <input type="text" id="name" th:field="*{name}" required>
@@ -44,12 +44,16 @@
                 <input type="password" id="password" th:field="*{password}" required>
             </div>
             <div class="form-group">
+                <label for="confirmPassword">Bekræft Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <div class="form-group">
                 <label for="cvr">CVR nummer:</label>
                 <input type="number" id="cvr" th:field="*{cvr}" required>
             </div>
             <button type="submit" class="auth-button">Opret bruger</button>
             <div class="auth-switch">
-                <p>Har du allerede en bruger? <a th:href="@{/login}">Log ind her</a></p>
+                <p>Har du allerede en bruger? <a th:href="@{/opretLogin/login}">Log ind her</a></p>
             </div>
         </form>
     </div>
