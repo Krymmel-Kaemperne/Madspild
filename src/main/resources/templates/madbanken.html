@@ -10,264 +10,261 @@
 </head>
 <body>
 
-<div class="container">
-    <div th:replace="fragments/header :: header('madbanken')"></div>
+<div th:replace="fragments/header :: header('madbanken')"></div>
 
-    <div id="content" class="flex-container">
+<div id="content" class="flex-container">
 
-        <div class="fakta-section-no-bckg">
+    <div class="fakta-section-no-bckg">
              <span>
                  <h2>Modtag donationer fra virksomheder</h2> <br>
              </span>
 
-            <div class="text-content">
+        <div class="text-content">
 
-                <div class="stat-box">
-                    <h3>Kom i kontakt med virksomheder som vil donere madvarer. Via denne platform kan velgørende
-                        organisationer nemt komme i kontakt med virksomheder,
-                        der ønsker at donere overskudsmad og dermed gøre en forskel.</h3>
-                    <br>
+            <div class="stat-box">
+                <h3>Kom i kontakt med virksomheder som vil donere madvarer. Via denne platform kan velgørende
+                    organisationer nemt komme i kontakt med virksomheder,
+                    der ønsker at donere overskudsmad og dermed gøre en forskel.</h3>
+                <br>
 
-                    <ul>
-                        <li>🔹 Hvis du er velgørenhed, kan du kontakte virksomheder direkte via opslagene.
-                        </li>
-                        <li>🔹 Hvis du er virksomhed og vil donere så <strong> <a th:href="@{/opretLogin/login}"> log
-                            ind</a></strong> og
-                            begynd at bidrage til at mindske madspild.x$
-                        </li>
+                <ul>
+                    <li>🔹 Hvis du er velgørenhed, kan du kontakte virksomheder direkte via opslagene.
+                    </li>
+                    <li>🔹 Hvis du er virksomhed og vil donere så <strong> <a th:href="${/opretLogin/login}"> log ind</a></strong> og
+                        begynd at bidrage til at mindske madspild.
+                    </li>
 
-                    </ul>
-                </div>
+                </ul>
             </div>
         </div>
+    </div>
 
-        <div class="donation-opslag">
-            <div class="donation-opslag-header">
-                <img class="virksomheds-logo" src="/img/virksomheds-logo/7bd3bb38-962f-4f68-aab4-df59d3f8a81d.png"
-                     alt="donations-logo">
-                <h2>Føtex - Ringvejen 142</h2>
-                <div>
-                    <p>+45 9988 7766</p>
-                    <p>føtex@føtex.dk</p>
-                    <p>Ringvejen 142, 8000 Aarhus Ø</p>
-                </div>
+    <div class="donation-opslag">
+        <div class="donation-opslag-header">
+            <img class="virksomheds-logo" src="/img/virksomheds-logo/7bd3bb38-962f-4f68-aab4-df59d3f8a81d.png"
+                 alt="donations-logo">
+            <h2>Føtex - Ringvejen 142</h2>
+            <div>
+                <p>+45 9988 7766</p>
+                <p>føtex@føtex.dk</p>
+                <p>Ringvejen 142, 8000 Aarhus Ø</p>
             </div>
-            <div class="text-content">
-                <div class="stat-box">
-                    <br>
-                    <h3 class="afhentes">Afhentes senest: 12 April, 2025</h3>
-                    <br>
-                    <div class="two-columns">
-                        <div>
-                            <ul>
-                                <li>🥦 Grøntsager – 25 kg (fx gulerødder, broccoli, salat)</li>
-                                <li>🍎 Frugt – 30 kg (fx æbler, bananer, pærer)</li>
-                                <li>🍞 Brød & bagværk – 50 stk (fx boller, rugbrød, croissanter)</li>
-                                <li>🥛 Mejeriprodukter – 20 liter (fx mælk, yoghurt, fløde)</li>
-                                <li>🍗 Kød & pålæg – 15 kg (fx kylling, leverpostej, skinke)</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <ul>
-                                <li>🧀 Ost – 10 kg (fx skiveost, revet ost, feta)</li>
-                                <li>🥫 Konserves – 40 dåser (fx tomatpuré, bønner, tun)</li>
-                                <li>🍝 Tørvarer – 25 pakker (fx pasta, ris, mel)</li>
-                                <li>🍬 Snacks & søde sager – 60 stk (fx kiks, chokolade, myslibarer)</li>
-                                <li>🥤 Drikkevarer – 30 flasker/dåser (fx juice, sodavand, vand)</li>
-                            </ul>
-                        </div>
-                        <br>
-
+        </div>
+        <div class="text-content">
+            <div class="stat-box">
+                <br>
+                <h3 class="afhentes">Afhentes senest: 12 April, 2025</h3>
+                <br>
+                <div class="two-columns">
+                    <div>
+                        <ul>
+                            <li>🥦 Grøntsager – 25 kg (fx gulerødder, broccoli, salat)</li>
+                            <li>🍎 Frugt – 30 kg (fx æbler, bananer, pærer)</li>
+                            <li>🍞 Brød & bagværk – 50 stk (fx boller, rugbrød, croissanter)</li>
+                            <li>🥛 Mejeriprodukter – 20 liter (fx mælk, yoghurt, fløde)</li>
+                            <li>🍗 Kød & pålæg – 15 kg (fx kylling, leverpostej, skinke)</li>
+                        </ul>
                     </div>
-                    <p class="grey-p">Indrykket d. 08/04/2025</p>
-                </div>
-            </div>
-
-        </div>
-        <div class="donation-opslag">
-            <div class="donation-opslag-header">
-                <img class="virksomheds-logo" src="/img/virksomheds-logo/Coop_Danmark_logo.png"
-                     alt="donations-logo">
-                <h2>Coop - Jagtvej 142</h2>
-                <div>
-                    <p>+45 9812 5623</p>
-                    <p>Coop@coop.dk</p>
-                    <p>Jagtvej 142, 2200 København n</p>
-                </div>
-            </div>
-            <div class="text-content">
-                <div class="stat-box">
-                    <br>
-                    <h3 class="afhentes">Afhentes senest: 11 April, 2025</h3>
-                    <br>
-                    <div class="two-columns">
-                        <div>
-                            <ul>
-                                <li>🍳 Æg & morgenmad – 40 stk (fx æg, havregryn, cornflakes)</li>
-                                <li>🥬 Friske krydderurter – 5 bundter (fx persille, basilikum, koriander)</li>
-                                <li>🍰 Kager & desserter – 15 stk (fx muffins, tærte, budding)</li>
-                                <li>🧄 Krydderier – 20 pakker (fx salt, peber, karry)</li>
-                                <li>🥡 Færdigretter – 10 bakker (fx lasagne, wokretter, gryderetter)</li>
-                                <li>🍲 Suppe & bouillon – 12 liter (fx tomatsuppe, fond, ramen)</li>
-                                <li>🍕 Frosne varer – 18 stk (fx pizza, grøntsagsblandinger, nuggets)</li>
-                                <li>🧈 Smør & olie – 8 enheder (fx smør, margarine, olivenolie)</li>
-                                <li>🥒 Syltede varer – 10 glas (fx agurker, rødbeder, asier)</li>
-                                <li>🍯 Påsmørelse – 14 glas (fx marmelade, honning, nutella)</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <ul>
-                                <li>🥖 Sandwichvarer – 20 stk (fx sandwichbrød, pålæg, ost)</li>
-                                <li>🍛 Ris- og gryderetter – 16 portioner (fx risret, chili con carne, paella)</li>
-                                <li>🥗 Salater – 12 bokse (fx pastasalat, kartoffelsalat, coleslaw)</li>
-                                <li>🧃 Juice & smoothies – 10 flasker (fx appelsinjuice, smoothie, æblemost)</li>
-                                <li>🫐 Bær – 7 bakker (fx blåbær, hindbær, jordbær)</li>
-                                <li>🧊 Is & desserter – 10 stk (fx ispinde, literis, sorbet)</li>
-                                <li>🫓 Tortilla & wraps – 18 stk (fx fuldkorn, hvede, majs)</li>
-                                <li>🫘 Bælgfrugter – 15 poser (fx linser, kikærter, sorte bønner)</li>
-                                <li>🥥 Eksotiske varer – 6 stk (fx kokosnød, passionsfrugt, papaya)</li>
-                                <li>🥮 Internationale produkter – 12 stk (fx naan, miso, sojasauce)</li>
-                            </ul>
-                        </div>
+                    <div>
+                        <ul>
+                            <li>🧀 Ost – 10 kg (fx skiveost, revet ost, feta)</li>
+                            <li>🥫 Konserves – 40 dåser (fx tomatpuré, bønner, tun)</li>
+                            <li>🍝 Tørvarer – 25 pakker (fx pasta, ris, mel)</li>
+                            <li>🍬 Snacks & søde sager – 60 stk (fx kiks, chokolade, myslibarer)</li>
+                            <li>🥤 Drikkevarer – 30 flasker/dåser (fx juice, sodavand, vand)</li>
+                        </ul>
                     </div>
                     <br>
 
                 </div>
-                <p class="grey-p">Indrykket d. 10/04/2025</p>
+                <p class="grey-p">Indrykket d. 08/04/2025</p>
             </div>
         </div>
-        <div class="donation-opslag">
-            <div class="donation-opslag-header">
-                <img class="virksomheds-logo" src="/img/virksomheds-logo/Logo_AB_Primary_Black_RGB.png"
-                     alt="donations-logo">
-                <h2>Andersen Bakery - Ørestadsboulevard 49</h2>
-                <div>
-                    <p>+45 2839 1728</p>
-                    <p>Andersen@andersenbakery.dk</p>
-                    <p>Ørestadsboulevard, 2300 København Std</p>
-                </div>
-            </div>
-            <div class="text-content">
-                <div class="stat-box">
-                    <br>
-                    <h3 class="afhentes">Afhentes senest: 10 April, 2025 </h3>
-                    <br>
-                    <div class="two-columns">
-                        <div>
-                            <ul>
-                                <li>🥖 Sandwichbrød – 20 stk</li>
-                                <li>🍞 Rugbrød – 10 stk</li>
-                                <li>🥐 Croissanter – 15 stk</li>
-                                <li>🍪 Småkager – 25 stk</li>
-                                <li>🍩 Donuts – 10 stk</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <ul>
-                                <li>🍞 Franskbrød – 12 stk</li>
-                                <li>🥯 Bagels – 8 stk</li>
-                                <li>🍞 Brioche – 6 stk</li>
-                                <li>🍪 Kiks – 30 stk</li>
-                                <li>🍪 Muffins – 10 stk</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <br>
 
-                </div>
-                <p class="grey-p">Indrykket d. 10/04/2025</p>
+    </div>
+    <div class="donation-opslag">
+        <div class="donation-opslag-header">
+            <img class="virksomheds-logo" src="/img/virksomheds-logo/Coop_Danmark_logo.png"
+                 alt="donations-logo">
+            <h2>Coop - Jagtvej 142</h2>
+            <div>
+                <p>+45 9812 5623</p>
+                <p>Coop@coop.dk</p>
+                <p>Jagtvej 142, 2200 København n</p>
             </div>
         </div>
-        <div class="donation-opslag">
-            <div class="donation-opslag-header">
-                <img class="virksomheds-logo" src="/img/virksomheds-logo/310114_netto_web.png"
-                     alt="donations-logo">
-                <h2>Netto - Jomfruanegade 1</h2>
-                <div>
-                    <p>+45 2839 1728</p>
-                    <p>Andersen@andersenbakery.dk</p>
-                    <p>Jomfruanegade 1, 9000 Aalborg N</p>
-                </div>
-            </div>
-            <div class="text-content">
-                <div class="stat-box">
-                    <br>
-                    <h3 class="afhentes">Afhentes senest: 23 April, 2025 </h3>
-                    <br>
-                    <div class="two-columns">
-                        <div>
-                            <ul>
-                                <li>🥦 Grøntsager – 25 kg (fx gulerødder, broccoli, salat)</li>
-                                <li>🍎 Frugt – 30 kg (fx æbler, bananer, pærer)</li>
-                                <li>🥩 Kød – 15 kg (fx kylling, oksekød, svinekød)</li>
-                                <li>🥛 Mejeriprodukter – 20 liter (fx mælk, yoghurt, fløde)</li>
-                                <li>🧀 Ost – 10 kg (fx skiveost, revet ost, feta)</li>
-                                <li>🍖 Pålæg – 5 kg (fx skinke, leverpostej, salami)</li>
-                                <li>🍞 Brød – 50 stk (fx sandwichbrød, rugbrød, ciabatta)</li>
-                                <li>🥫 Konserves – 40 dåser (fx tomatpuré, bønner, tun)</li>
-                                <li>🍝 Pasta – 25 pakker (fx spaghetti, penne, lasagneplader)</li>
-                                <li>🍯 Honning – 5 glas</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <ul>
-                                <li>🍇 Frugtjuice – 15 liter (fx appelsinjuice, æblejuice)</li>
-                                <li>🥒 Friske grøntsager – 10 kg (fx agurker, tomater, peberfrugt)</li>
-                                <li>🍬 Snacks – 60 stk (fx chips, kiks, chokolade)</li>
-                                <li>🍕 Frosne varer – 30 stk (fx pizza, frosne grøntsager, nuggets)</li>
-                                <li>🥔 Kartoffelprodukter – 20 kg (fx kartoffelmos, fritter, pommes frites)</li>
-                                <li>🧃 Juice – 20 flasker (fx appelsinjuice, grapefrugtjuice)</li>
-                                <li>🍴 Køkkenredskaber – 15 stk (fx knive, skåle, skærebrætter)</li>
-                                <li>🍷 Vin – 10 flasker (fx rødvin, hvidvin, rosé)</li>
-                                <li>🍺 Øl – 24 flasker</li>
-                                <li>🥥 Eksotiske varer – 12 stk (fx kokosnød, passionsfrugt, papaya)</li>
-                            </ul>
-                        </div>
+        <div class="text-content">
+            <div class="stat-box">
+                <br>
+                <h3 class="afhentes">Afhentes senest: 11 April, 2025</h3>
+                <br>
+                <div class="two-columns">
+                    <div>
+                        <ul>
+                            <li>🍳 Æg & morgenmad – 40 stk (fx æg, havregryn, cornflakes)</li>
+                            <li>🥬 Friske krydderurter – 5 bundter (fx persille, basilikum, koriander)</li>
+                            <li>🍰 Kager & desserter – 15 stk (fx muffins, tærte, budding)</li>
+                            <li>🧄 Krydderier – 20 pakker (fx salt, peber, karry)</li>
+                            <li>🥡 Færdigretter – 10 bakker (fx lasagne, wokretter, gryderetter)</li>
+                            <li>🍲 Suppe & bouillon – 12 liter (fx tomatsuppe, fond, ramen)</li>
+                            <li>🍕 Frosne varer – 18 stk (fx pizza, grøntsagsblandinger, nuggets)</li>
+                            <li>🧈 Smør & olie – 8 enheder (fx smør, margarine, olivenolie)</li>
+                            <li>🥒 Syltede varer – 10 glas (fx agurker, rødbeder, asier)</li>
+                            <li>🍯 Påsmørelse – 14 glas (fx marmelade, honning, nutella)</li>
+                        </ul>
                     </div>
-                    <br>
-
-                </div>
-                <p class="grey-p">Indrykket d. 22/04/2025</p>
-            </div>
-        </div>
-        <div class="donation-opslag">
-            <div class="donation-opslag-header">
-                <img class="virksomheds-logo" src="/img/virksomheds-logo/slikaway-logo-2024-simple-1.png"
-                     alt="donations-logo">
-                <h2>Slik Away - Bruunsgade 34</h2>
-                <div>
-                    <p>+45 1929 8374</p>
-                    <p>slikAway@slikawaty.dk</p>
-                    <p>Bruunsgade 34, 8000 Aarhus Ø</p>
-                </div>
-            </div>
-            <div class="text-content">
-                <div class="stat-box">
-                    <br>
-                    <h3 class="afhentes">Afhentes senest: 2 April, 2025 </h3>
-                    <br>
-                    <div class="two-columns">
-                        <div>
-                            <ul>
-                                <li>🍬 Sugared Candy – 50 poser (fx vingummi, lakrids, karameller)</li>
-                                <li>🍫 Chokolade – 50 stk (fx mælkechokolade, fyldt chokolade)</li>
-                                <li>🍭 Slikkepinde – 200 stk (fx frugtsmag, cola, kirsebær)</li>
-                                <li>🍒 Gummibamser – 25 poser (fx frugtflavored, cola-bamser)</li>
-                                <li>🍬 Karameller – 100 stk (fx hårdkarameller, bløde karameller)</li>
-                            </ul>
-                        </div>
+                    <div>
+                        <ul>
+                            <li>🥖 Sandwichvarer – 20 stk (fx sandwichbrød, pålæg, ost)</li>
+                            <li>🍛 Ris- og gryderetter – 16 portioner (fx risret, chili con carne, paella)</li>
+                            <li>🥗 Salater – 12 bokse (fx pastasalat, kartoffelsalat, coleslaw)</li>
+                            <li>🧃 Juice & smoothies – 10 flasker (fx appelsinjuice, smoothie, æblemost)</li>
+                            <li>🫐 Bær – 7 bakker (fx blåbær, hindbær, jordbær)</li>
+                            <li>🧊 Is & desserter – 10 stk (fx ispinde, literis, sorbet)</li>
+                            <li>🫓 Tortilla & wraps – 18 stk (fx fuldkorn, hvede, majs)</li>
+                            <li>🫘 Bælgfrugter – 15 poser (fx linser, kikærter, sorte bønner)</li>
+                            <li>🥥 Eksotiske varer – 6 stk (fx kokosnød, passionsfrugt, papaya)</li>
+                            <li>🥮 Internationale produkter – 12 stk (fx naan, miso, sojasauce)</li>
+                        </ul>
                     </div>
                 </div>
                 <br>
 
             </div>
-            <p class="grey-p">Indrykket d. 1/04/2025</p>
+            <p class="grey-p">Indrykket d. 10/04/2025</p>
         </div>
+    </div>
+    <div class="donation-opslag">
+        <div class="donation-opslag-header">
+            <img class="virksomheds-logo" src="/img/virksomheds-logo/Logo_AB_Primary_Black_RGB.png"
+                 alt="donations-logo">
+            <h2>Andersen Bakery - Ørestadsboulevard 49</h2>
+            <div>
+                <p>+45 2839 1728</p>
+                <p>Andersen@andersenbakery.dk</p>
+                <p>Ørestadsboulevard, 2300 København Std</p>
+            </div>
+        </div>
+        <div class="text-content">
+            <div class="stat-box">
+                <br>
+                <h3 class="afhentes">Afhentes senest: 10 April, 2025 </h3>
+                <br>
+                <div class="two-columns">
+                    <div>
+                        <ul>
+                            <li>🥖 Sandwichbrød – 20 stk</li>
+                            <li>🍞 Rugbrød – 10 stk</li>
+                            <li>🥐 Croissanter – 15 stk</li>
+                            <li>🍪 Småkager – 25 stk</li>
+                            <li>🍩 Donuts – 10 stk</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>🍞 Franskbrød – 12 stk</li>
+                            <li>🥯 Bagels – 8 stk</li>
+                            <li>🍞 Brioche – 6 stk</li>
+                            <li>🍪 Kiks – 30 stk</li>
+                            <li>🍪 Muffins – 10 stk</li>
+                        </ul>
+                    </div>
+                </div>
+                <br>
 
+            </div>
+            <p class="grey-p">Indrykket d. 10/04/2025</p>
+        </div>
+    </div>
+    <div class="donation-opslag">
+        <div class="donation-opslag-header">
+            <img class="virksomheds-logo" src="/img/virksomheds-logo/310114_netto_web.png"
+                 alt="donations-logo">
+            <h2>Netto - Jomfruanegade 1</h2>
+            <div>
+                <p>+45 2839 1728</p>
+                <p>Andersen@andersenbakery.dk</p>
+                <p>Jomfruanegade 1, 9000 Aalborg N</p>
+            </div>
+        </div>
+        <div class="text-content">
+            <div class="stat-box">
+                <br>
+                <h3 class="afhentes">Afhentes senest: 23 April, 2025 </h3>
+                <br>
+                <div class="two-columns">
+                    <div>
+                        <ul>
+                            <li>🥦 Grøntsager – 25 kg (fx gulerødder, broccoli, salat)</li>
+                            <li>🍎 Frugt – 30 kg (fx æbler, bananer, pærer)</li>
+                            <li>🥩 Kød – 15 kg (fx kylling, oksekød, svinekød)</li>
+                            <li>🥛 Mejeriprodukter – 20 liter (fx mælk, yoghurt, fløde)</li>
+                            <li>🧀 Ost – 10 kg (fx skiveost, revet ost, feta)</li>
+                            <li>🍖 Pålæg – 5 kg (fx skinke, leverpostej, salami)</li>
+                            <li>🍞 Brød – 50 stk (fx sandwichbrød, rugbrød, ciabatta)</li>
+                            <li>🥫 Konserves – 40 dåser (fx tomatpuré, bønner, tun)</li>
+                            <li>🍝 Pasta – 25 pakker (fx spaghetti, penne, lasagneplader)</li>
+                            <li>🍯 Honning – 5 glas</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>🍇 Frugtjuice – 15 liter (fx appelsinjuice, æblejuice)</li>
+                            <li>🥒 Friske grøntsager – 10 kg (fx agurker, tomater, peberfrugt)</li>
+                            <li>🍬 Snacks – 60 stk (fx chips, kiks, chokolade)</li>
+                            <li>🍕 Frosne varer – 30 stk (fx pizza, frosne grøntsager, nuggets)</li>
+                            <li>🥔 Kartoffelprodukter – 20 kg (fx kartoffelmos, fritter, pommes frites)</li>
+                            <li>🧃 Juice – 20 flasker (fx appelsinjuice, grapefrugtjuice)</li>
+                            <li>🍴 Køkkenredskaber – 15 stk (fx knive, skåle, skærebrætter)</li>
+                            <li>🍷 Vin – 10 flasker (fx rødvin, hvidvin, rosé)</li>
+                            <li>🍺 Øl – 24 flasker</li>
+                            <li>🥥 Eksotiske varer – 12 stk (fx kokosnød, passionsfrugt, papaya)</li>
+                        </ul>
+                    </div>
+                </div>
+                <br>
+
+            </div>
+            <p class="grey-p">Indrykket d. 22/04/2025</p>
+        </div>
+    </div>
+    <div class="donation-opslag">
+        <div class="donation-opslag-header">
+            <img class="virksomheds-logo" src="/img/virksomheds-logo/slikaway-logo-2024-simple-1.png"
+                 alt="donations-logo">
+            <h2>Slik Away - Bruunsgade 34</h2>
+            <div>
+                <p>+45 1929 8374</p>
+                <p>slikAway@slikawaty.dk</p>
+                <p>Bruunsgade 34, 8000 Aarhus Ø</p>
+            </div>
+        </div>
+        <div class="text-content">
+            <div class="stat-box">
+                <br>
+                <h3 class="afhentes">Afhentes senest: 2 April, 2025 </h3>
+                <br>
+                <div class="two-columns">
+                    <div>
+                        <ul>
+                            <li>🍬 Sugared Candy – 50 poser (fx vingummi, lakrids, karameller)</li>
+                            <li>🍫 Chokolade – 50 stk (fx mælkechokolade, fyldt chokolade)</li>
+                            <li>🍭 Slikkepinde – 200 stk (fx frugtsmag, cola, kirsebær)</li>
+                            <li>🍒 Gummibamser – 25 poser (fx frugtflavored, cola-bamser)</li>
+                            <li>🍬 Karameller – 100 stk (fx hårdkarameller, bløde karameller)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+        </div>
+        <p class="grey-p">Indrykket d. 1/04/2025</p>
     </div>
 
-    <div th:replace="~{fragments/footer :: footer}"></div>
-
 </div>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+
 </body>
 </html>
