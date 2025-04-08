@@ -35,6 +35,7 @@ public class SubscriptionController {
         newsletterSubscriptionService.addNewsletterSubscription(subscription, redirectAttributes);
         System.out.println("Ny tilmelding " + subscription.getEmail()); // Log til console
 
+
         return "redirect:/tak-for-tilmelding";
     }
 
