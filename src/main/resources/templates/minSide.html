@@ -2,9 +2,90 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Min side</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <title>minSide</title>
+    <link rel="stylesheet" href="/stylesheet.css">
 </head>
 <body>
+<div class="container">
+    <div th:replace="fragments/header :: header('login')"></div>
+    <div id="content" class="flex-container">
+
+
+        <div class="profil-container">
+
+            <div class="profil-header">
+                <div>
+                    <img class="virksomheds-logo" src="/img/virksomheds-logo/7bd3bb38-962f-4f68-aab4-df59d3f8a81d.png"
+                         alt="donations-logo">
+
+                </div>
+                <div>
+                    <h2>Føtex - Ringvejen 142</h2>
+                </div>
+                <div>
+                    <p>+45 9988 7766</p>
+                    <p>føtex@føtex.dk</p>
+                    <p>Ringvejen 142, 8000 Aarhus Ø</p>
+
+                </div>
+            </div>
+
+            <div class="profil-content">
+
+                <div >
+                    <p class="profil-info">Navn:</p>
+                    <h2 >Føtex - Ringvejen 142</h2>
+                </div>
+
+                <div >
+                    <p class="profil-info">Addresse:</p>
+                    <h2 >Ringvejen 142, 8000 Aarhus Ø</h2>
+                </div>
+                <div>
+                    <p class="profil-info">Branche:</p>
+                    <h2 >Fødevare Industrien</h2>
+                </div>
+
+                <div >
+                    <p class="profil-info">Kontakt Person:</p>
+                    <h2 >Peter Olsen</h2>
+                </div>
+                <div >
+                    <p class="profil-info">Email:</p>
+                    <h2 >po@føtex.dk</h2>
+                </div>
+
+                <div class="profil-card" >
+                    <p class="profil-info">Password</p>
+                    <h2 >**************</h2>
+                </div>
+                <div >
+                    <p class="profil-info">CVR-nummer</p>
+                    <h2 >2938498</h2>
+                </div>
+
+            </div>
+            <br><br><br><br>
+            <div class="profil-knapper">
+
+                <button type="submit" class="auth-button">Rediger profil</button>
+                <button type="submit" class="auth-button">Opret nyt opslag</button>
+                <button type="submit" class="auth-button">Se dine opslag</button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div th:replace="~{fragments/footer :: footer}"></div>
+
+
+</div>
 
 </body>
 </html>
