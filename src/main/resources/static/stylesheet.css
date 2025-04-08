@@ -32,7 +32,7 @@ header {
 }
 
 .logo a {
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 700;
     padding: 6px 10px;
     border: 1px solid black;
@@ -853,7 +853,10 @@ Køleskaberen
     font-family: "Almarai", sans-serif;
     cursor: pointer;
     transition: background-color 0.3s;
+    display: block;
+    margin: 10px auto 0 auto;
 }
+
 
 .auth-button:hover {
     background-color: #A5B8A1;
@@ -879,5 +882,5 @@ Køleskaberen
     text-align: center;
     margin-bottom: 15px;
     font-size: 14px;
-
+}
 
