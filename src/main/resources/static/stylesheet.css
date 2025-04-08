@@ -501,10 +501,6 @@ footer {
     flex-grow: 1;
 }
 
-.season-block ul li {
-    margin-bottom: 5px;
-}
-
 .season-block ul li strong {
     color: #111;
 }
