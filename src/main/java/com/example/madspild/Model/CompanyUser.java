@@ -9,12 +9,13 @@ public class CompanyUser {
     private String contactPerson;
     private String email;
     private int cvr;
+    private String password;
 
     public CompanyUser() {
     }
 
     public CompanyUser(int companyId, String name, String address,
-                       String industry, String contactPerson, String email, int cvr) {
+                       String industry, String contactPerson, String email, int cvr, String password) {
         this.companyId = companyId;
         this.name = name;
         this.address = address;
@@ -22,6 +23,7 @@ public class CompanyUser {
         this.contactPerson = contactPerson;
         this.email = email;
         this.cvr = cvr;
+        this.password = password;
     }
 
     public int getCompanyId() {
@@ -78,5 +80,13 @@ public class CompanyUser {
 
     public void setCvr(int cvr) {
         this.cvr = cvr;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
