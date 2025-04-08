@@ -663,9 +663,90 @@ Køleskaberen
     height: auto;
     border-radius: 10px;
 }
+
 .no-recipes-message {
     font-family: "Almarai", sans-serif;
     color: var(--text-color);
     line-height: 1.6;
-
 }
+
+/* Login & Registration Styles */
+.auth-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 9px;
+    font-size: 16px;
+    font-family: "Almarai", sans-serif;
+}
+
+.auth-button {
+    background-color: #BFD0C1;
+    color: #000;
+    border: 1px solid black;
+    border-radius: 9px;
+    padding: 10px;
+    font-size: 18px;
+    font-family: "Almarai", sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.auth-button:hover {
+    background-color: #A5B8A1;
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.auth-switch a {
+    color: #000;
+    text-decoration: underline;
+}
+
+.auth-switch a:hover {
+    color: #555;
+}
+
+.error-message {
+    color: #d9534f;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 14px;
+
+
