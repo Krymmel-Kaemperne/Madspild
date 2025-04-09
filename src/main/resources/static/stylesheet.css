@@ -77,7 +77,7 @@ header {
 /* Login knap */
 .log-in a {
     float: right;
-    font-size: 18px;
+    font-size: 16px;
     color: var(--text-color);
     text-decoration: none;
     border: 1px solid black;
@@ -779,7 +779,7 @@ footer {
     border: 1px solid black;
     border-radius: 9px;
     padding: 10px;
-    font-size: 18px;
+    font-size: 16px;
     font-family: "Almarai", sans-serif;
     cursor: pointer;
     transition: background-color 0.3s;
