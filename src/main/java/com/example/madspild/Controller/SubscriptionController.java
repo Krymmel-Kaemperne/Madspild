@@ -15,33 +15,37 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class SubscriptionController {
 
+    // Injecter service der håndterer nyhedsbrevstilmeldinger
     @Autowired
     NewsletterSubscriptionService newsletterSubscriptionService;
 
-
+    // Håndterer formularindsendelse til nyhedsbrevstilmelding
     @PostMapping("/tilmeld-nyhedsbrev")
     public String submitSubscription(NewsletterSubscription subscription, RedirectAttributes redirectAttributes) {
-        //Validering
+        // Validering: Tjek om e-mail er udfyldt
         if(subscription.getEmail() == null || subscription.getEmail().isEmpty()) {
             redirectAttributes.addFlashAttribute("error", "Email er påkrævet");
             return "redirect:/#footer"; // Returnerer kun formulardelen
         }
+        // Validering: Tjek om brugeren har accepteret betingelser
         if(!subscription.isAcceptTerms()) {
             redirectAttributes.addFlashAttribute("error", "Du skal acceptere betingelserne");
             return "redirect:/#footer";
         }
 
-        // Gem email (I en liste)
+        // Gemmer tilmeldingen og sender velkomstmail
         newsletterSubscriptionService.addNewsletterSubscription(subscription, redirectAttributes);
+        // Logger e-mail til konsollen (til debugging)
         System.out.println("Ny tilmelding " + subscription.getEmail()); // Log til console
 
-
+        // Omdiriger til "tak for tilmelding" side
         return "redirect:/tak-for-tilmelding";
     }
 
+    // Viser takkeside efter succesfuld tilmelding
     @GetMapping("/tak-for-tilmelding")
     public String thankYouPage(@ModelAttribute("sentEmail") String email, Model model) {
         model.addAttribute("email", email);
-        return "tak-for-tilmelding";
+        return "tak-for-tilmelding"; // Returnerer tak-for-tilmelding.html
     }
 }
