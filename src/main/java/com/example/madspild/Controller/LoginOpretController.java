@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/opretLogin")
 public class LoginOpretController {
 
+    // Injecter CompanyUserService til at håndtere virksomhedens brugerdata
     @Autowired
     CompanyUserService companyUserService; // Service layer til håndtering af brugerdata
 
