@@ -11,13 +11,14 @@
 <body>
 
 <div class="container">
-  <!-- Header  -->
-  <div th:replace="fragments/header :: header('koleskaberen')"></div>
 
+  <!-- Header  -->
+
+  <div th:replace="fragments/header :: header('koleskaberen')"></div>
 
   <div id="content">
     <div class="koleskaberen-container">
-      <!-- Venstre sektion -->
+      <!-- Top-sektion med introduktion og søgeboks -->
       <div class="top-section">
         <h2>Køleskaberen</h2>
         <p>
@@ -27,28 +28,36 @@
         </p>
         <br>
         <p><em>Prototype: æg og kartoffel.</em></p>
+
+        <!-- Søgeformular -->
         <form class="search-form" th:action="@{/koleskaberen}" method="get">
+          <!-- Inputfelt til ingrediens -->
           <input
                   type="text"
                   name="ingredient"
                   placeholder="Indtast en ingrediens..."
                   th:value="${ingredient}"
           />
+          <!-- søge knap -->
           <button type="submit">Søg</button>
         </form>
-        <!-- Vis besked, hvis der ikke er opskrifter -->
+
+        <!-- Besked, hvis der ikke findes opskrifter -->
         <div th:if="${recipes.empty}" class="no-recipes-message">
           <p th:text="${noRecipesMessage}">Der er ingen opskrifter oprettet for ingrediensen.</p>
         </div>
       </div>
 
-      <!-- Højre sektion -->
+      <!-- Bund-sektion med opskriftsdetaljer, køleskabsbillede eller liste over opskrifter -->
       <div class="bottom-section">
         <!-- Vis opskriftsdetaljer -->
         <div th:if="${showRecipeDetails}" class="recipe-details">
           <div class="recipe-content">
+            <!-- Opskriftens navn -->
             <h2 th:text="${recipeName}">Recipe Name</h2>
+            <!-- Opskriftens billede -->
             <img th:src="${recipeImage}" alt="Recipe Image" class="recipe-image">
+            <!-- Opskriftens instruktioner -->
             <p class="recipe-instructions" th:utext="${recipeInstructions}">Recipe Instructions</p>
           </div>
         </div>
@@ -58,20 +67,24 @@
           <img src="/img/openfridge.png" alt="Fridge Image">
         </div>
 
-        <!-- Vis opskrifter -->
+        <!-- Vis liste over opskrifter -->
         <div th:if="!${recipes.empty}" class="recipe-flex-container">
+          <!-- Iterer over opskrifter og vis dem som links -->
           <a th:each="recipe : ${recipes}" th:href="@{/koleskaberen(recipeID=${recipe.recipeID})}" class="recipe-item">
+            <!-- Opskriftens billede -->
             <img th:src="${recipe.imagePath}" th:alt="${recipe.recipeName}" class="recipe-photo">
+            <!-- Opskriftens navn -->
             <p th:text="${recipe.recipeName}">Recipe Name</p>
-
           </a>
         </div>
       </div>
     </div>
+  </div>
+
 
     <!-- Footer  -->
-    <div th:replace="~{fragments/footer :: footer}"></div>
 
+    <div th:replace="~{fragments/footer :: footer}"></div>
   </div>
 </body>
 </html>
