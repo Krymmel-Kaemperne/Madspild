@@ -1,76 +1,85 @@
 <!DOCTYPE html>
 <html lang="da" xmlns:th="http://www.thymeleaf.org">
 <body>
+<!-- Header fragment, der kan genbruges på alle sider -->
 <header th:fragment="header(currentPage)">
+    <!-- Logo med link til forsiden -->
     <div class="logo">
         <a th:href="@{/}">Danmark Mod Madspild</a>
     </div>
+
+    <!-- Navigation -->
     <div class="nav">
+        <!-- Link til Madbanken, får klassen 'aktiv' hvis currentPage er 'madbanken' -->
         <a
                 th:href="@{/madbanken}"
                 th:classappend="${currentPage == 'madbanken'} ? 'aktiv' : ''"
-        >Madbanken</a
-        >
+        >Madbanken</a>
+
+        <!-- Link til Køleskaberen, aktiv hvis currentPage er 'koleskaberen' -->
         <a
                 th:href="@{/koleskaberen}"
                 th:classappend="${currentPage == 'koleskaberen'} ? 'aktiv' : ''"
-        >Køleskaberen</a
-        >
+        >Køleskaberen</a>
+
+        <!-- Link til Fakta, aktiv hvis currentPage er 'fakta' -->
         <a
                 th:href="@{/fakta}"
                 th:classappend="${currentPage == 'fakta'} ? 'aktiv' : ''"
-        >Fakta</a
-        >
+        >Fakta</a>
 
+        <!-- Dropdown-menu til Tips&Tricks og Sæsonkalender -->
         <div class="dropdown">
-            <!-- Dropdown-knap: skifter tekst og aktiv-klasse -->
+            <!-- Dropdown-knap: viser Tips&Tricks hvis IKKE på sæsonkalender-siden -->
             <a
                     th:if="${currentPage != 'saesonkalender'}"
                     th:href="@{/tipstricks}"
                     class="dropbtn"
                     th:classappend="${currentPage == 'tipstricks'} ? 'aktiv' : ''"
-            >Tips&Tricks ▾</a
-            >
+            >Tips&Tricks ▾</a>
+
+            <!-- Dropdown-knap: viser Sæsonkalender hvis man ER på sæsonkalender-siden -->
             <a
                     th:if="${currentPage == 'saesonkalender'}"
                     th:href="@{/saesonkalender}"
                     class="dropbtn"
                     th:classappend="${currentPage == 'saesonkalender'} ? 'aktiv' : ''"
-            >Sæsonkalender ▾</a
-            >
+            >Sæsonkalender ▾</a>
 
-            <!-- Dropdown-indhold: viser det modsatte link -->
+            <!-- Dropdown-indhold: viser det modsatte link af hvad knappen viser -->
             <div class="dropdown-content">
+                <!-- Link til Sæsonkalender, vises hvis man IKKE er på sæsonkalender-siden -->
                 <a
                         th:href="@{/saesonkalender}"
                         th:if="${currentPage != 'saesonkalender'}"
                         th:classappend="${currentPage == 'saesonkalender'} ? 'aktiv' : ''"
-                >Sæsonkalender</a
-                >
+                >Sæsonkalender</a>
+
+                <!-- Link til Tips&Tricks, vises hvis man ER på sæsonkalender-siden -->
                 <a
                         th:href="@{/tipstricks}"
                         th:if="${currentPage == 'saesonkalender'}"
                         th:classappend="${currentPage == 'tipstricks'} ? 'aktiv' : ''"
-                >Tips&Tricks</a
-                >
+                >Tips&Tricks</a>
             </div>
         </div>
 
+        <!-- Link til Om os, aktiv hvis currentPage er 'omos' -->
         <a
                 th:href="@{/omos}"
                 th:classappend="${currentPage == 'omos'} ? 'aktiv' : ''"
-        >Om os</a
-        >
+        >Om os</a>
     </div>
+
+    <!-- Login/Log ud knap -->
     <div class="log-in">
         <a
                 th:href="@{/opretLogin/login}"
                 th:classappend="${currentPage == 'login'} ? 'aktiv' : ''"
                 th:text="${currentPage == 'minSide'} ? 'Log ud' : 'Log ind'">
+            <!-- Teksten sættes dynamisk: 'Log ud' hvis på minSide, ellers 'Log ind' -->
         </a>
     </div>
-
-
 </header>
 </body>
 </html>

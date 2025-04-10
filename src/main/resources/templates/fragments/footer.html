@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="da" xmlns:th="http://www.thymeleaf.org">
-<!-- Kun fragment, ingen <head> eller <body> -->
+<!-- Dette er kun et Thymeleaf fragment, ikke en hel HTML-side -->
 <footer th:fragment="footer">
+    <!-- Første kolonne: Om projektet -->
     <div class="footer-column">
         <h3>Om Projekt Madspild</h3>
         <p>
@@ -14,15 +15,18 @@
         </p>
     </div>
 
+    <!-- Anden kolonne: Nyhedsbrev tilmelding -->
     <div class="footer-column">
         <h3>Tilmeld Nyhedsbrev</h3>
         <p>Få de seneste nyheder og tips direkte i din indbakke.</p>
 
+        <!-- Formular til nyhedsbrev -->
         <form
                 action="/tilmeld-nyhedsbrev"
                 method="post"
                 onsubmit="return document.getElementById('acceptTerms').checked;"
         >
+            <!-- Email input -->
             <div>
                 <input
                         type="email"
@@ -34,6 +38,7 @@
                 />
             </div>
 
+            <!-- Checkbox for samtykke -->
             <div class="checkbox-group">
                 <input
                         type="checkbox"
@@ -46,13 +51,14 @@
                 </label>
             </div>
 
+            <!-- Tilmeld knap -->
             <button type="submit" class="newsletter-button">
                 Tilmeld
             </button>
         </form>
-
     </div>
 
+    <!-- Tredje kolonne: Nyttige links -->
     <div class="footer-column">
         <h3>Nyttige Links</h3>
         <ul class="footer-links">
@@ -65,6 +71,7 @@
         </ul>
     </div>
 
+    <!-- Fjerde kolonne: Kontaktinformation -->
     <div class="footer-column">
         <h3>Kontakt os</h3>
         <div class="contact-column">
