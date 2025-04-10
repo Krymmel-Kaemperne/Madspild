@@ -2,8 +2,10 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8" />
+  <!-- Forbinder til Google Fonts for hurtigere indlæsning -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Importerer skrifttypen 'Almarai' fra Google Fonts -->
   <link
           href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap"
           rel="stylesheet"
@@ -12,19 +14,21 @@
   <link rel="stylesheet" href="/stylesheet.css" />
 </head>
 <body>
+<!-- Hovedcontainer for hele siden -->
 <div id="tips" class="container">
+  <!-- Indsætter header fra Thymeleaf fragment (server-side skabelon) -->
   <div th:replace="fragments/header :: header('saesonkalender')"></div>
-
-
+  <!-- Indholdsområde med flexbox layout -->
   <div id="content" class="flex-container">
     <div class="tips-section">
+      <!-- Tekstindhold -->
       <div class="text-content">
         <h2>Sæsonkalender og Tips</h2>
         <p>
           Spis efter sæsonen for bedre smag, pris og mindre madspild. Her er
           en oversigt over danske råvarer og tips til at udnytte dem bedst.
         </p>
-
+        <!-- Hele sæsonkalenderen -->
         <div class="season-calendar">
           <!-- Forår -->
           <div class="season-block spring">
@@ -167,7 +171,7 @@
       </div>
     </div>
   </div>
-
+  <!-- Indsætter footer fra Thymeleaf fragment -->
   <div th:replace="~{fragments/footer :: footer}"></div>
 </div>
 </body>

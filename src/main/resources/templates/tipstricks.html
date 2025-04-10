@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <!-- Forbinder til Google Fonts for hurtigere indlæsning -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Importerer skrifttypen 'Almarai' fra Google Fonts -->
+  <link
+          href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap"
+          rel="stylesheet"
+  />
   <title>Madspild</title>
-  <link rel="stylesheet" href="/stylesheet.css">
+  <!-- Linker til din eksterne CSS-fil -->
+  <link rel="stylesheet" href="/stylesheet.css" />
 </head>
 <body>
 
+<!-- Hovedcontainer for hele siden -->
 <div id="tips" class="container">
+  <!-- Indsætter header fra Thymeleaf fragment (server-side skabelon) -->
   <div th:replace="fragments/header :: header('tipstricks')"></div>
 
-
+  <!-- Indholdsområde med flexbox layout -->
   <div id="content" class="flex-container">
+    <!-- Sektion med tips -->
     <div class="tips-section">
+      <!-- Tekstindhold -->
       <div class="text-content">
         <h2>Tips og Tricks</h2>
 
+        <!-- Boks med tekst og billeder -->
         <div class="stat-box">
-          <p>Madspild er et stort problem, men heldigvis kan vi alle gøre en forskel!
+          <p>
+            Madspild er et stort problem, men heldigvis kan vi alle gøre en forskel!
             Her er nogle praktiske tips til både private husholdninger og
-            virksomheder som supermarkeder og restauranter.</p>
+            virksomheder som supermarkeder og restauranter.
+          </p>
+
+          <!-- Tips til forbrugere -->
           <h3 style="margin-top: 20px">Tips til Forbrugere (Dig og Mig)</h3>
           <ul>
             <li>
@@ -60,12 +75,15 @@
               ben.
             </li>
           </ul>
-          <br>
+
+          <!-- Billede relateret til forbrugertips -->
+          <br />
           <div class="photo3">
-            <img src="/img/koleskab.jpg" alt="Madspild i Danmark">
+            <img src="/img/koleskab.jpg" alt="Madspild i Danmark" />
           </div>
 
-          <br>
+          <!-- Tips til supermarkeder -->
+          <br />
           <h3>For Supermarkeder:</h3>
           <ul>
             <li>
@@ -90,8 +108,8 @@
             </li>
           </ul>
 
-
-          <br>
+          <!-- Tips til restauranter -->
+          <br />
           <h3>For Restauranter & Caféer:</h3>
           <ul>
             <li>
@@ -121,21 +139,26 @@
               de nødvendige mængder råvarer.
             </li>
           </ul>
-          <br>  
+
+          <!-- Billede relateret til restauranter -->
+          <br />
           <div class="photo3">
-            <img src="/img/restaurant.png" alt="Madspild i Danmark">
+            <img src="/img/restaurant.png" alt="Madspild i Danmark" />
           </div>
         </div>
+        <!-- Slut på stat-box -->
       </div>
+      <!-- Slut på text-content -->
     </div>
+    <!-- Slut på tips-section -->
   </div>
-
-
-
-  </div>
-
-<div th:replace="~{fragments/footer :: footer}"></div>
+  <!-- Slut på content -->
 
 </div>
+<!-- Slut på container -->
+
+<!-- Indsætter footer fra Thymeleaf fragment -->
+<div th:replace="~{fragments/footer :: footer}"></div>
+
 </body>
 </html>

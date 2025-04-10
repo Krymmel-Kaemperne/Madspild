@@ -58,8 +58,6 @@ public class NewsletterSubscriptionService {
         }
     }
 
-
-
     public NewsletterSubscription findNewsletterSubscriptionById(int id) {
         return null;
     }

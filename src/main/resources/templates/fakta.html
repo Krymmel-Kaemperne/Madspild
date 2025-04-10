@@ -2,32 +2,39 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <!-- Forbindelse til Google Fonts (Almarai font) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
     <title>Fakta</title>
+    <!-- Linker til ekstern stylesheet til styling af HTML-elementer -->
     <link rel="stylesheet" href="/stylesheet.css">
   </head>
 <body>
 
 <div class="container">
 
+  <!-- Inkludér headerfragment via Thymeleaf -->
   <div th:replace="fragments/header :: header('fakta')"></div>
 
-
+  <!-- Indholdet opdelt i fleksible sektioner -->
   <div id="content" class="flex-container">
-    <div class="fakta-section">
 
+    <!-- Første faktasektion: introduktion til problemet -->
+    <div class="fakta-section">
       <div class="text-content">
+        <!-- Titel på sektionen -->
         <span>
           <h2>Fakta & Statistik</h2>
         </span>
         <div class="stat-box">
+          <!-- Underrubrik og beskrivelse af madspildets størrelse -->
           <h3>Hvor stort er problemet</h3>
           <p> Madspild er en af de største udfordringer inden for bæredygtighed og fødevareproduktion.
             Hvert år bliver enorme mængder spiselige fødevarer kasseret,
             hvilket har store økonomiske, sociale og miljømæssige konsekvenser.</p>
           <ul>
+            <!-- Liste med statistiske data, bruger <strong> til at fremhæve vigtige tal -->
             <li>Hver dag smides næsten <strong>2.000</strong> tons fødevarer ud i Danmark – nok til at brødføde tusindvis af mennesker.</li>
             <li>Det samlede madspild i danske husholdninger er <strong>261.000</strong> tons årligt.</li>
             <li>Servicesektoren står for <strong>227.000</strong> tons madspild årligt, hvoraf <strong>163.000</strong> tons kommer fra detailhandlen – det svarer til <strong>72%</strong> af hele servicesektorens madspild.</li>
@@ -35,12 +42,15 @@
           </ul>
         </div>
       </div>
+      <!-- Billede der illustrerer madspild (skraldespand fyldt med mad) -->
       <div class="photo1">
         <img src="/img/Trashcan.webp" alt="Skraldespand fyldt med mad">
       </div>
     </div>
 
+    <!-- Anden faktasektion, opdelt i to kolonner med tekst og billeder -->
     <div class="fakta-section2">
+      <!-- Billeder relateret til madspild i detaljhandlen -->
       <div class="photo2">
         <img src="/img/RemoveItems.webp" alt="Mand fjerner varer fra hylden">
         <img style="margin-top:10px;" src="/img/BadFood.webp" alt="Mad er blevet dårligt i køleskabet">
@@ -48,9 +58,11 @@
       <div class="text-content">
 
         <div class="stat-box">
+          <!-- Overskrift der forklarer hvordan madspildet fordeler sig i fødevarekæden -->
           <h3>Hvordan fordeler madspildet sig?</h3>
             <p> Madspild findes overalt i fødevarekæden – fra produktion til forbrug. </p>
           <br>
+          <!-- Detaljer om madspild i detailhandelen -->
             <h3>Detailhandelens madspild</h3>
               <ul>
                 <li>Specialforretninger (slagtere, fiskeforretninger, grønthandlere) står for <strong>12.000</strong> tons madspild årligt.</li>
@@ -58,6 +70,7 @@
                 <li>Meget af dette mad kunne være spist, men bliver ofte kasseret pga. udløbsdatoer, skader på emballage eller overskudsproduktion.</li>
               </ul>
           <br>
+          <!-- Detaljer om husholdningernes madspild -->
             <h3>Madspild i husholdninger</h3>
             <ul>
               <li>Husholdningerne står for den største andel af madspildet i Danmark.</li>
@@ -70,12 +83,14 @@
     </div>
   </div>
 
+  <!-- Tredje faktasektion, hvor konsekvenserne af madspild præsenteres -->
   <div class="fakta-section">
     <div class="text-content">
       <div class="stat-box">
         <h3>De store konsekvenser af madspild</h3>
         <p> Madspild påvirker ikke kun vores pengepung – det har også store konsekvenser for miljøet og samfundet: </p>
         <br>
+        <!-- Økonomiske, sociale og miljømæssige konsekvenser -->
         <h3>Miljømæssige konsekvenser</h3>
         <ul>
           <li>Når mad smides ud, spildes også de ressourcer, der er brugt på at producere den – vand, jord, energi og transport.</li>
@@ -83,6 +98,7 @@
           <li>Hvis madspild var et land, ville det være den tredjestørste udleder af CO₂ i verden – kun overgået af Kina og USA.</li>
         </ul>
         <br>
+        <!-- Økonomisk konsekvens af madspild -->
         <h3>Økonomiske konsekvenser</h3>
         <ul>
           <li>Danskerne smider mad ud for milliarder af kroner hvert år.</li>
@@ -90,6 +106,7 @@
           <li>Supermarkeder har begyndt at sælge varer med kort holdbarhed billigere for at reducere deres madspild.</li>
         </ul>
         <br>
+        <!-- Sociale konsekvenser af madspild -->
         <h3>Sociale konsekvenser</h3>
         <ul>
           <li>Mens tonsvis af mad går til spilde, lever mange mennesker i
@@ -97,13 +114,16 @@
         </ul>
       </div>
     </div>
+    <!-- Billeder relateret til de store konsekvenser af madspild -->
     <div class="photo1">
       <img src="/img/Globe.webp" alt="Kloden flyder over med skrald">
       <img style="margin-top:10px;height: 200px" src="/img/BadFoodSmoke.webp" alt="Overskudsmad bliver brændt og udleder drivhusgasser">
     </div>
   </div>
 
+  <!-- Fjerde sektion: Løsninger på madspild -->
   <div class="fakta-section2">
+    <!-- Billede der illustrerer, hvordan korrekt opbevaring kan forhindre madspild -->
     <div class="photo2">
       <img src="/img/GoodFood.webp" alt="Mad er ikke blevet for dårligt i køleskabet">
     </div>
@@ -113,6 +133,7 @@
         <p> Madspild kan bekæmpes på mange måder – både af enkeltpersoner, virksomheder og samfundet som helhed.</p>
         <br>
         <ul>
+          <!-- Praktiske forslag til at reducere madspild, f.eks. planlægning af indkøb -->
           <li><strong>Planlæg dine indkøb</strong> – Lav en indkøbsliste og køb kun det, du har brug for.</li>
           <li><strong>Forstå datomærkning</strong> – "Bedst før" betyder ikke, at maden er dårlig efter datoen. Brug dine sanser!</li>
           <li><strong>Opbevar maden korrekt</strong> – Mange madvarer holder sig længere, hvis de opbevares rigtigt.</li>
@@ -122,7 +143,6 @@
       </div>
     </div>
   </div>
-
 
   <div th:replace="~{fragments/footer :: footer}"></div>
 
