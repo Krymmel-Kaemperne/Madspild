@@ -17,7 +17,7 @@
 <!-- Container for hele siden, der indeholder header, indhold og footer -->
 <div class="container">
 
-  <!-- Indlæser header-fragmentet ved hjælp af Thymeleaf, som inkluderer en dynamisk header baseret på 'login' parameter -->
+
   <div th:replace="fragments/header :: header('login')"></div>
 
   <!-- Hovedindholdet på siden, som indeholder loginformularen -->
@@ -54,7 +54,7 @@
     </div>
   </div>
 
-  <!-- Footer sektion, som erstattes via Thymeleaf fragment -->
+
   <div th:replace="~{fragments/footer :: footer}"></div>
 </div>
 
