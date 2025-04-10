@@ -48,10 +48,10 @@ public class NewsletterSubscriptionService {
                     "Tak for din tilmelding til Madspild nyhedsbrevet. \n\n" +
                     "Du vil løbende modtage tips og tricks til at reducere madspild.\n\n" +
                     "Med venlig hilsen, \n" +
-                    "Danmark mod Madspild"
+                    "Operation Madspild"
             );
             mailSender.send(message); // Forsøg at sende e-mailen
-            redirectAttributes.addFlashAttribute("sentEmail", email); // Feedback til UI
+            redirectAttributes.addFlashAttribute("sentEmail ", email); // Feedback til UI
         } catch (Exception e) {
             // Hvis der sker en fejl under afsendelse, tilføj fejlbesked til UI
             redirectAttributes.addFlashAttribute("Email error", "Kunne ikke sende bekræftelsesmail til " + email);
