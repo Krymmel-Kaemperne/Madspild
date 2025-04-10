@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Angiver tegnkodningen som UTF-8, hvilket sikrer korrekt visning af tegn og symboler på tværs af sprog -->
+    <meta charset="UTF-8">
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,15 +13,21 @@
     <link rel="stylesheet" href="/stylesheet.css">
 </head>
 <body>
+<!-- Container for hele siden, som indeholder header, indhold og footer -->
 <div class="container">
+
+    <!-- Indlæser header-fragmentet ved hjælp af Thymeleaf, som viser en dynamisk header baseret på 'minSide' parameter -->
     <div th:replace="fragments/header :: header('minSide')"></div>
+
+    <!-- Hovedindholdet på siden, der indeholder brugerens profilinformation -->
     <div id="content" class="flex-container">
-
-
+        <!-- Profil-container, der holder brugerens profiloplysninger -->
         <div class="profil-container">
 
+            <!-- Profil-header, som indeholder brugerens logo, navn og kontaktinformationer -->
             <div class="profil-header">
                 <div>
+                    <!-- Logo for virksomheden 'Føtex', der vises som et billede -->
                     <img class="virksomheds-logo" src="/img/virksomheds-logo/7bd3bb38-962f-4f68-aab4-df59d3f8a81d.png"
                          alt="donations-logo">
 
@@ -86,6 +94,7 @@
 
     </div>
 
+    <!-- Indlæser footer-fragmentet ved hjælp af Thymeleaf -->
     <div th:replace="~{fragments/footer :: footer}"></div>
 
 
