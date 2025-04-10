@@ -21,37 +21,42 @@ public class KoleskaberenController {
 
     @GetMapping("/koleskaberen")
     public String koleskaberen(
-            @RequestParam(value = "ingredient", required = false) String ingredient,
-            @RequestParam(value = "recipeID", required = false) Integer recipeID,
+            @RequestParam(value = "ingredient", required = false) String ingredient, // Ingrediens fra brugerens input
+            @RequestParam(value = "recipeID", required = false) Integer recipeID,   // ID for en specifik opskrift
             Model model) {
 
+        // Hvis recipeID er angivet, vis detaljer for den specifikke opskrift
         if (recipeID != null) {
-            // Vis opskriftsdetaljer
-            Recipe selectedRecipe = recipeService.findRecipeById(recipeID);
+            Recipe selectedRecipe = recipeService.findRecipeById(recipeID); // Hent opskriften baseret på ID
             if (selectedRecipe != null) {
-                model.addAttribute("showRecipeDetails", true);
+                model.addAttribute("showRecipeDetails", true); // Vis opskriftsdetaljer
                 model.addAttribute("recipeName", selectedRecipe.getRecipeName());
                 model.addAttribute("recipeInstructions", selectedRecipe.getRecipeInstructions());
                 model.addAttribute("recipeImage", selectedRecipe.getImagePath());
-                model.addAttribute("showFridgeImage", false);
                 model.addAttribute("recipes", Collections.emptyList());
-            }
-        } else if (ingredient == null || ingredient.isEmpty()) {
-            // Vis køleskabsbilledet, hvis ingen ingrediens er angivet
-            model.addAttribute("showFridgeImage", true);
-            model.addAttribute("showRecipeDetails", false);
-            model.addAttribute("recipes", Collections.emptyList());
-        } else {
-            // Filtrer opskrifter baseret på ingrediens
-            List<Recipe> filteredRecipes = recipeService.findRecipesByIngredient(ingredient);
-            model.addAttribute("showFridgeImage", false);
-            model.addAttribute("showRecipeDetails", false);
-            model.addAttribute("recipes", filteredRecipes);
-
-            if (filteredRecipes.isEmpty()) {
-                model.addAttribute("noRecipesMessage", "Der er ingen opskrifter oprettet for ingrediensen " + ingredient + ". Prøv igen.");
+                return "koleskaberen"; //
             }
         }
+
+        // Hvis ingen ingrediens er angivet, vis køleskabsbilledet
+        if (ingredient == null || ingredient.isEmpty()) {
+            model.addAttribute("showFridgeImage", true); // Vis køleskabsbilledet
+            model.addAttribute("recipes", Collections.emptyList()); // Ingen opskrifter vises
+            model.addAttribute("showRecipeDetails", false); // Skjul opskriftsdetaljer
+            return "koleskaberen"; // Returner skabelonen
+        }
+
+        // Hvis en ingrediens er angivet, filtrer opskrifter baseret på ingrediensen
+        List<Recipe> filteredRecipes = recipeService.findRecipesByIngredient(ingredient); // Hent opskrifter baseret på ingrediens
+        model.addAttribute("showFridgeImage", false); // Skjul køleskabsbilledet
+        model.addAttribute("showRecipeDetails", false); // Skjul opskriftsdetaljer
+        model.addAttribute("recipes", filteredRecipes);
+
+        // Hvis der ikke findes opskrifter, vis en fejlbesked
+        if (filteredRecipes.isEmpty()) {
+            model.addAttribute("noRecipesMessage", "Der er ingen opskrifter oprettet for ingrediensen " + ingredient + ". Prøv igen.");
+        }
+
 
         model.addAttribute("ingredient", ingredient);
         return "koleskaberen";
