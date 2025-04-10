@@ -1,34 +1,52 @@
 <!DOCTYPE html>
 <html lang="da" xmlns:th="http://www.thymeleaf.org">
 <head>
+  <!-- Angiver tegnkodningen til UTF-8, som understøtter de fleste sprog og tegn -->
   <meta charset="UTF-8">
+  <!-- Forbinder til Google Fonts for at hente fontfamilien 'Almarai', som bruges på siden -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+  <!-- Angiver sidens titel, som vises i browserens fane -->
   <title>Log ind - Madspild</title>
+  <!-- Linker til ekstern stylesheet, der bruges til at style HTML-elementerne på siden -->
   <link rel="stylesheet" href="/stylesheet.css">
 </head>
 <body>
 
+<!-- Container for hele siden, der indeholder header, indhold og footer -->
 <div class="container">
 
+  <!-- Indlæser header-fragmentet ved hjælp af Thymeleaf, som inkluderer en dynamisk header baseret på 'login' parameter -->
   <div th:replace="fragments/header :: header('login')"></div>
 
+  <!-- Hovedindholdet på siden, som indeholder loginformularen -->
   <div id="content">
 
+    <!-- Container til login-formularen -->
     <div class="auth-container">
+      <!-- Titel der beskriver siden (Log ind på din virksomhedskonto) -->
       <h2>Log ind på din virksomhedskonto</h2>
+      <!-- Fejlmeddelelse, der kun vises, hvis en fejl findes -->
       <div th:if="${error}" class="error-message" th:text="${error}"></div>
+      <!-- Loginformular, der bruger POST-metoden til at sende data til serveren -->
         <form class="auth-form" th:action="@{/opretLogin/login}" method="post">
+          <!-- Første inputfelt for brugerens email, markeret som krævet -->
           <div class="form-group">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
             </div>
+
+            <!-- Andet inputfelt for brugerens password, markeret som krævet -->
             <div class="form-group">
               <label for="password">Password:</label>
               <input type="password" id="password" name="password" required>
             </div>
+
+          <!-- Sendeknap til at indsende login-formularen -->
           <button type="submit" class="auth-button">Log ind</button>
+
+          <!-- Link, der giver brugeren mulighed for at oprette en ny konto, hvis de ikke har en -->
           <div class="auth-switch">
             <p>Har du ikke en bruger? <a th:href="@{/opretLogin/opretBruger}">Opret bruger her</a></p>
           </div>
@@ -36,6 +54,7 @@
     </div>
   </div>
 
+  <!-- Footer sektion, som erstattes via Thymeleaf fragment -->
   <div th:replace="~{fragments/footer :: footer}"></div>
 </div>
 
