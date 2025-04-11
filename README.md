@@ -1,6 +1,6 @@
 # Danmark mod Madspild 🇩🇰♻️🍲
 
-Velkommen til GitHub-repositoriet for projektet "Danmark mod Madspild". Dette projekt er udviklet af Gruppe 4 (Frederik, Tobias, Sebastian & Peyton) som en del af [Indsæt kursus/formål her, f.eks. et studieprojekt].
+Velkommen til GitHub-repositoriet for projektet "Danmark mod Madspild". Dette projekt er udviklet af Gruppe 4 (Frederik, Tobias, Sebastian & Peyton) som en del af Obligatorisk opgave 2.Semester Damatiker KEA.
 
 **Github:** [https://github.com/Krymmel-Kaemperne/Madspild](https://github.com/Krymmel-Kaemperne/Madspild)
 
